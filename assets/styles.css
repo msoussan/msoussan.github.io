@@ -236,3 +236,54 @@ a:hover{ text-decoration: underline; }
   font-size: 0.9rem;
   border-top: 1px solid var(--border);
 }
+
+/* --- Landing refinements (System Overview feel) --- */
+
+.meta {
+  margin: 10px 0 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.meta strong {
+  color: #1c1c1c;
+}
+
+.card.primary {
+  background: linear-gradient(180deg, #ffffff, #f6f8ff);
+  border-color: rgba(31,79,216,0.22);
+}
+
+.card.secondary {
+  background: #ffffff;
+  border-color: var(--border);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+}
+
+.kpi .value {
+  font-size: 1.45rem;
+}
+
+.kpi .label {
+  letter-spacing: 0.01em;
+}
+
+.actions .btn.primary {
+  border-color: rgba(31,79,216,0.35);
+  background: rgba(31,79,216,0.10);
+}
+
+.actions .btn {
+  background: #fff;
+}
+
+.actions .btn.ghost {
+  border-color: rgba(0,0,0,0.10);
+  background: #fff;
+  color: #111;
+}
+.actions .btn.ghost:hover{
+  border-color: rgba(31,79,216,0.28);
+  background: rgba(31,79,216,0.05);
+}
+
