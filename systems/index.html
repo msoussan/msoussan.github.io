@@ -4,209 +4,173 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Systems — Mickael Soussan</title>
-  <meta name="description" content="Systems case studies — AI-first threat intelligence and cybersecurity platforms." />
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <main class="container">
 
-    <header class="topbar">
+  <!-- Shared Navigation -->
+  <nav class="navbar">
+    <div class="nav-content">
       <div class="brand">
-        <span class="mark" aria-hidden="true"></span>
-        <strong>Mickael Soussan</strong>
+        <span class="brand-dot"></span>
+        <span class="brand-name">Mickael Soussan</span>
       </div>
+      <div class="nav-links">
+        <a href="/">Overview</a>
+        <a href="/systems" class="active">Systems</a>
+        <a href="/cv">Experience</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/systems">Systems</a>
-        <a href="/cv">CV</a>
-        <a href="/contact">Contact</a>
-      </nav>
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="status-badge">
+        <span class="pulse-dot"></span>
+        Deep Dive: Production Architectures
+      </div>
+      <h1>System <span class="text-gradient">Case Studies</span></h1>
+      <p class="hero-subtext">
+        Detailed breakdowns of production-grade systems focused on 
+        <strong>AI-first enrichment</strong>, <strong>agentic orchestration</strong>, and <strong>high-precision CTI</strong>.
+      </p>
+      <div class="tag-group">
+        <span class="tag mono">Pattern: Problem → Architecture → Outcomes</span>
+      </div>
     </header>
 
-    <section class="hero" aria-label="Systems overview">
-      <h1>Systems</h1>
-      <p class="subtitle">
-        A selection of <strong>production-grade architectures</strong> I designed and owned end-to-end —
-        focused on <strong>AI-first enrichment</strong>, <strong>agentic systems</strong>, and <strong>high-precision CTI</strong>.
-      </p>
-      <p class="meta">
-        Format: Problem → Constraints → Architecture → Decisions → Outcomes → Next
-      </p>
-
-      <div class="badges" aria-label="Scope tags">
-        <span class="badge"><span class="dot" aria-hidden="true"></span> Production ownership</span>
-        <span class="badge">Pipelines &amp; orchestration</span>
-        <span class="badge">LLM guardrails &amp; evaluation</span>
-        <span class="badge">Schema-first intelligence</span>
-      </div>
-    </section>
-
-    <!-- Systems list -->
-    <section class="grid" aria-label="Systems list">
-      <div class="card primary">
-        <h2>Case Studies</h2>
-        <p>
-          Each case study focuses on architectural decisions and operational constraints —
-          not marketing. If you want the shortest path: start with <strong>System 01</strong>.
-        </p>
-
-        <div class="kpis" aria-label="Systems index">
-          <div class="kpi">
-            <div class="label">System 01</div>
-            <div class="value">AI-First CTI Pipeline</div>
-            <div class="note">Ingestion → enrichment → storage → analyst UI</div>
-          </div>
-          <div class="kpi">
-            <div class="label">System 02</div>
-            <div class="value">Phishing Domain Triage</div>
-            <div class="note">High-volume classification with layered heuristics</div>
-          </div>
-          <div class="kpi">
-            <div class="label">System 03</div>
-            <div class="value">Agentic Orchestrator</div>
-            <div class="note">Multi-service routing, tool prediction, STM/LTM</div>
-          </div>
+    <!-- Systems Index Grid -->
+    <section class="bento-grid">
+      <div class="card card-main">
+        <div class="card-header">
+          <span class="mono-label">SYSTEMS_INDEX</span>
+          <h2>Active Portfolio</h2>
         </div>
-
-        <div class="actions">
-          <a class="btn primary" href="#system-01">Open System 01</a>
-          <a class="btn ghost" href="#system-02">System 02</a>
-          <a class="btn ghost" href="#system-03">System 03</a>
+        
+        <div class="kpi-grid full-width">
+          <a href="#system-01" class="kpi-item hoverable">
+            <span class="kpi-label">System 01</span>
+            <span class="kpi-value">AI-First CTI Pipeline</span>
+            <span class="kpi-meta">Ingestion & Enrichment</span>
+          </a>
+          <a href="#system-02" class="kpi-item hoverable inactive">
+            <span class="kpi-label">System 02</span>
+            <span class="kpi-value">Phishing Triage</span>
+            <span class="kpi-meta">Layered Heuristics [WIP]</span>
+          </a>
+          <a href="#system-03" class="kpi-item hoverable inactive">
+            <span class="kpi-label">System 03</span>
+            <span class="kpi-value">Agentic Orchestrator</span>
+            <span class="kpi-meta">Routing & Tools [WIP]</span>
+          </a>
         </div>
       </div>
 
-      <aside class="card secondary" aria-label="How to read">
-        <h2>How to read these</h2>
-        <ul class="list">
-          <li><strong>Constraints</strong> are the real story: cost, latency, scale, correctness, maintenance.</li>
-          <li><strong>AI is treated as a subsystem</strong>: fallible, evaluated, monitored, and bounded.</li>
-          <li><strong>Schema-first</strong>: structured outputs are designed and enforced explicitly.</li>
-          <li><strong>Operational bias</strong>: reliability and traceability over demo results.</li>
+      <div class="card card-side">
+        <div class="card-header">
+          <span class="mono-label">READING_GUIDE</span>
+          <h2>Design Philosophy</h2>
+        </div>
+        <ul class="capability-list tight">
+          <li><span class="check"></span> Constraints over Hype</li>
+          <li><span class="check"></span> Bounded AI Subsystems</li>
+          <li><span class="check"></span> Schema-First Logic</li>
+          <li><span class="check"></span> Operational Traceability</li>
         </ul>
-        <p style="margin-top: 14px;">
-          Prefer the full story? See <a href="/cv">CV</a>.
-        </p>
-      </aside>
-    </section>
-
-    <!-- ========================= -->
-    <!-- System 01: Case Study -->
-    <!-- ========================= -->
-    <section id="system-01" class="card" style="margin-top: 18px;" aria-label="System 01 case study">
-      <h2>System 01 — AI-First Cyber Threat Intelligence Pipeline</h2>
-      <p class="meta">
-        Type: Production pipeline · Pattern: ingestion → enrichment → storage → consumers · Primary user: analysts + downstream automation
-      </p>
-
-      <h3 style="margin-top: 18px; font-size: 1.05rem;">Problem</h3>
-      <p>
-        Convert a high volume of heterogeneous cybersecurity content (feeds, reports, advisories, blogs)
-        into <strong>reliable, structured intelligence</strong> that analysts can trust and that automation can consume.
-        The challenge is not summarization — it’s <strong>precision, consistency, and operational scalability</strong>.
-      </p>
-
-      <h3 style="margin-top: 18px; font-size: 1.05rem;">Constraints</h3>
-      <ul class="list">
-        <li><strong>Correctness &amp; trust</strong>: avoid generic or invented entities; outputs must be traceable.</li>
-        <li><strong>Cost control</strong>: LLM calls are budgeted; avoid wasting tokens on low-signal content.</li>
-        <li><strong>Throughput</strong>: continuous ingestion with batching, retries, and backpressure.</li>
-        <li><strong>Operational maintenance</strong>: logging, run artifacts, reproducibility, and monitoring are non-negotiable.</li>
-      </ul>
-
-      <h3 style="margin-top: 18px; font-size: 1.05rem;">Architecture (high level)</h3>
-      <p class="meta">Core idea: schema-first enrichment + multi-stage filtering + AI as bounded tools.</p>
-
-      <div class="kpis" aria-label="Architecture blocks">
-        <div class="kpi">
-          <div class="label">Ingestion</div>
-          <div class="value">RSS / URLs</div>
-          <div class="note">Deduping, normalization, source scoring</div>
-        </div>
-        <div class="kpi">
-          <div class="label">Triage</div>
-          <div class="value">Signal gating</div>
-          <div class="note">Skip low-value content before AI spend</div>
-        </div>
-        <div class="kpi">
-          <div class="label">Enrichment</div>
-          <div class="value">LLM + rules</div>
-          <div class="note">Entities, CVEs, IOCs, taxonomy, titles</div>
-        </div>
-      </div>
-
-      <div class="kpis" style="margin-top: 12px;" aria-label="Architecture blocks 2">
-        <div class="kpi">
-          <div class="label">Storage</div>
-          <div class="value">DB + vector</div>
-          <div class="note">Structured store + retrieval layer</div>
-        </div>
-        <div class="kpi">
-          <div class="label">Consumers</div>
-          <div class="value">Dashboards</div>
-          <div class="note">Analyst UI, reports, search, exports</div>
-        </div>
-        <div class="kpi">
-          <div class="label">Ops</div>
-          <div class="value">Artifacts</div>
-          <div class="note">Logs, run IDs, CSV/JSON outputs, metrics</div>
-        </div>
-      </div>
-
-      <h3 style="margin-top: 18px; font-size: 1.05rem;">Key decisions</h3>
-      <ul class="list">
-        <li><strong>Schema-first extraction</strong> with strict JSON constraints and enumerations for high precision.</li>
-        <li><strong>Multi-stage gating</strong> to minimize AI spend: classify relevance before enrichment.</li>
-        <li><strong>Guardrails &amp; consistency rules</strong> (e.g., “no generic entities”, mandatory victim extraction, etc.).</li>
-        <li><strong>End-to-end traceability</strong>: store prompts/versions, outputs, and run artifacts for auditability.</li>
-        <li><strong>Cost accounting</strong>: token/cost tracking per model to keep the system sustainable.</li>
-      </ul>
-
-      <h3 style="margin-top: 18px; font-size: 1.05rem;">Outcomes</h3>
-      <ul class="list">
-        <li>Reliable entity-rich intelligence with an analyst-editable workflow.</li>
-        <li>Scalable pipeline with reproducible outputs (run IDs, artifacts).</li>
-        <li>Operational control over quality, cost, and long-term maintainability.</li>
-      </ul>
-
-      <h3 style="margin-top: 18px; font-size: 1.05rem;">Next</h3>
-      <ul class="list">
-        <li>Formalize evaluation suites (precision/recall per entity type, drift tracking).</li>
-        <li>Add automated regression testing for prompts and rule changes.</li>
-        <li>Expand “original source detection” and multi-source attribution.</li>
-      </ul>
-
-      <div class="actions" style="margin-top: 16px;">
-        <a class="btn primary" href="/contact">Discuss this system</a>
-        <a class="btn ghost" href="#top">Back to top</a>
       </div>
     </section>
 
-    <!-- Placeholders for next systems -->
-    <section id="system-02" class="card" style="margin-top: 18px;" aria-label="System 02 placeholder">
-      <h2>System 02 — Phishing Domain Triage &amp; Refinement (Placeholder)</h2>
-      <p class="meta">Coming next: high-volume domain classification pipeline with layered heuristics and explainable outcomes.</p>
-      <p>
-        This case study will cover the funnel design (ignore/scan/benign/gibberish/suspicious),
-        brand permutation logic, entropy heuristics, and operational artifacts (CSV outputs, debug decisions).
-      </p>
+    <!-- Case Study 01 -->
+    <article id="system-01" class="case-study-section">
+      <div class="card">
+        <div class="case-study-header">
+          <div class="header-main">
+            <span class="mono-label">CASE_STUDY_01</span>
+            <h2>AI-First Cyber Threat Intelligence Pipeline</h2>
+            <p class="meta-line">Pattern: ingestion → enrichment → storage → consumers</p>
+          </div>
+          <div class="header-action">
+            <a href="/contact" class="btn btn-secondary">Discuss Design</a>
+          </div>
+        </div>
+
+        <div class="case-content-grid">
+          <div class="content-main">
+            <h3>The Problem</h3>
+            <p>Converting high-volume heterogeneous cyber content into <strong>reliable intelligence</strong> analysts can trust. The challenge is not summarization—it’s <strong>precision, consistency, and operational scalability</strong> at token-budget constraints.</p>
+            
+            <div class="decision-block">
+              <h3>Key Architectural Decisions</h3>
+              <ul class="capability-list">
+                <li><strong>Schema-first extraction:</strong> Strict JSON constraints for high precision.</li>
+                <li><strong>Multi-stage gating:</strong> Minimize AI spend by classifying relevance early.</li>
+                <li><strong>End-to-end traceability:</strong> Storing prompts, versions, and run artifacts.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="content-specs">
+            <div class="spec-group">
+              <span class="mono-label">CONSTRAINTS</span>
+              <ul>
+                <li>Cost: $X,XXX Monthly Budget</li>
+                <li>Throughput: Continuous</li>
+                <li>Reliability: 99.9% Ingestion</li>
+              </ul>
+            </div>
+            <div class="spec-group">
+              <span class="mono-label">OUTCOMES</span>
+              <ul>
+                <li>Analyst-editable Workflow</li>
+                <li>Reproducible Run IDs</li>
+                <li>Full Cost Accounting</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+        <div class="architecture-block">
+          <span class="mono-label">PIPELINE_FLOW</span>
+          <div class="pipeline-visual">
+            <div class="node">Source Scraper</div>
+            <div class="connector"></div>
+            <div class="node">Signal Triage</div>
+            <div class="connector"></div>
+            <div class="node">LLM Enrichment</div>
+            <div class="connector"></div>
+            <div class="node">Graph Store</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Placeholders -->
+    <section class="placeholder-grid">
+      <div class="card placeholder-card">
+        <span class="mono-label">SYSTEM_02 // COMING SOON</span>
+        <h3>Phishing Domain Triage</h3>
+        <p>Layered heuristics and explainable outcomes for high-volume domain classification.</p>
+      </div>
+      <div class="card placeholder-card">
+        <span class="mono-label">SYSTEM_03 // COMING SOON</span>
+        <h3>Agentic Orchestrator</h3>
+        <p>Microservice boundaries, Redis queues, and reliable tool-prediction routing.</p>
+      </div>
     </section>
 
-    <section id="system-03" class="card" style="margin-top: 18px;" aria-label="System 03 placeholder">
-      <h2>System 03 — Agentic Orchestrator &amp; Microservice Tooling (Placeholder)</h2>
-      <p class="meta">Coming next: orchestrator routing, tool prediction, STM/LTM, and production-grade service boundaries.</p>
-      <p>
-        This case study will cover multi-service architecture, Redis queues, arq workers, routing logic,
-        and building reliable agentic systems with explicit interfaces.
-      </p>
-    </section>
-
-    <footer class="footer" style="margin-top: 26px;">
-      © Mickael Soussan · <a href="https://github.com/msoussan">GitHub</a>
+    <footer class="main-footer">
+      <div class="footer-left">© 2024 Mickael Soussan</div>
+      <div class="footer-right">
+        <a href="#top" class="mono-label">BACK_TO_TOP ↑</a>
+      </div>
     </footer>
-
   </main>
+
 </body>
 </html>
