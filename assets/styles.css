@@ -1,0 +1,238 @@
+:root{
+  --bg: #ffffff;
+  --panel: #fafafa;
+  --border: #eeeeee;
+  --text: #111111;
+  --muted: #555555;
+  --muted2: #666666;
+  --link: #1f4fd8;
+
+  --radius: 14px;
+  --container: 980px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+* { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a{ color: var(--link); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 56px 20px;
+}
+
+.topbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+}
+
+.mark{
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #111;
+}
+
+.brand strong{
+  font-size: 0.98rem;
+}
+
+.nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.95rem;
+  justify-content: flex-end;
+}
+
+.nav a{
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.nav a:hover{
+  text-decoration: none;
+  background: rgba(31,79,216,0.07);
+}
+
+.hero{
+  margin-top: 22px;
+  padding: 26px 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #ffffff, #fafafa);
+  box-shadow: var(--shadow);
+}
+
+.hero h1{
+  margin: 0 0 6px 0;
+  font-size: 2.1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle{
+  margin: 0 0 16px 0;
+  color: #3c3c3c;
+  font-size: 1.05rem;
+}
+
+.badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 0 0;
+}
+
+.badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.9rem;
+  color: #2b2b2b;
+}
+
+.dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #23c55e; /* “operational/ok” */
+}
+
+.grid{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 880px){
+  .grid{ grid-template-columns: 1fr; }
+  .topbar{ flex-direction: column; align-items: flex-start; }
+  .nav{ justify-content: flex-start; }
+}
+
+.card{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 18px 18px;
+  box-shadow: var(--shadow);
+}
+
+.card h2{
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.card p{
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+.kpis{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 520px){
+  .kpis{ grid-template-columns: 1fr; }
+}
+
+.kpi{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 12px;
+  background: var(--panel);
+}
+
+.kpi .label{
+  font-size: 0.85rem;
+  color: var(--muted2);
+  margin-bottom: 4px;
+}
+
+.kpi .value{
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.kpi .note{
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+.btn:hover{
+  text-decoration: none;
+  border-color: rgba(31,79,216,0.35);
+  background: rgba(31,79,216,0.05);
+}
+
+.btn.primary{
+  border-color: rgba(31,79,216,0.28);
+  background: rgba(31,79,216,0.07);
+}
+
+.list{
+  margin: 12px 0 0 0;
+  padding-left: 1.2rem;
+}
+
+.footer{
+  margin-top: 26px;
+  padding-top: 18px;
+  color: var(--muted2);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
