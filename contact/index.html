@@ -4,106 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Mickael Soussan</title>
-  <meta name="description" content="Contact information for Mickael Soussan, Principal AI & Cybersecurity Architect." />
-
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-      max-width: 760px;
-      margin: 70px auto;
-      padding: 0 20px;
-      line-height: 1.65;
-      color: #111;
-    }
-    nav {
-      margin-bottom: 28px;
-      font-size: 0.98rem;
-    }
-    nav a {
-      color: #1f4fd8;
-      text-decoration: none;
-      margin-right: 14px;
-    }
-    nav a:hover { text-decoration: underline; }
-
-    h1 {
-      font-size: 1.9rem;
-      margin: 0 0 18px 0;
-    }
-
-    p { margin: 12px 0; }
-
-    .contact-box {
-      margin-top: 22px;
-      padding: 18px 20px;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      background: #fafafa;
-    }
-
-    .contact-item {
-      margin: 10px 0;
-    }
-
-    .contact-item a {
-      color: #1f4fd8;
-      text-decoration: none;
-    }
-
-    .contact-item a:hover { text-decoration: underline; }
-
-    footer {
-      margin-top: 44px;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    footer a {
-      color: #1f4fd8;
-      text-decoration: none;
-    }
-    footer a:hover { text-decoration: underline; }
-  </style>
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
-
 <body>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/systems">Systems</a>
-    <a href="/cv">CV</a>
-    <a href="/contact">Contact</a>
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">Mickael Soussan</span>
+      </div>
+      <div class="nav-links">
+        <a href="/">Overview</a>
+        <a href="/systems">Systems</a>
+        <a href="/cv">Experience</a>
+        <a href="/contact" class="active">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <h1>Contact</h1>
+  <main class="container" style="max-width: 700px;">
+    <header class="hero">
+      <span class="mono-label">COMMUNICATION_CHANNEL</span>
+      <h1>Get in <span class="text-gradient">Touch</span></h1>
+      <p class="hero-subtext">The simplest way to reach me is by email for technical inquiries or architectural discussion.</p>
+    </header>
 
-  <p>
-    The simplest way to reach me is by email.
-  </p>
-
-  <div class="contact-box">
-    <div class="contact-item">
-      <strong>Email:</strong>
-      <a href="mailto:mickael.soussan@protonmail.com">mickael.soussan@protonmail.com</a>
+    <div class="card">
+      <div class="kpi-grid full-width">
+        <div class="kpi-item">
+          <span class="kpi-label">Email</span>
+          <a href="mailto:mickael.soussan@protonmail.com" class="kpi-value" style="color: var(--accent); text-decoration: none;">mickael.soussan@protonmail.com</a>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-label">GitHub</span>
+          <a href="https://github.com/msoussan" target="_blank" class="kpi-value" style="color: var(--accent); text-decoration: none;">github.com/msoussan</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p class="mono" style="font-size: 11px; text-align: center;">Typically responds within 24-48 hours.</p>
+      </div>
     </div>
-
-    <div class="contact-item">
-      <strong>GitHub:</strong>
-      <a href="https://github.com/msoussan" target="_blank">github.com/msoussan</a>
-    </div>
-
-    <!-- Optional: uncomment if you want LinkedIn visible -->
-    <!--
-    <div class="contact-item">
-      <strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/mickael-soussan-09635885/" target="_blank">LinkedIn profile</a>
-    </div>
-    -->
-  </div>
-
-  <footer>
-    © Mickael Soussan · <a href="https://github.com/msoussan">GitHub</a>
-  </footer>
-
+  </main>
 </body>
 </html>
