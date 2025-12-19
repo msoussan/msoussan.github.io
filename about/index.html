@@ -4,161 +4,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Mickael Soussan</title>
-  <meta name="description" content="About Mickael Soussan — Principal AI & Cybersecurity Architect." />
-
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-      max-width: 760px;
-      margin: 70px auto;
-      padding: 0 20px;
-      line-height: 1.65;
-      color: #111;
-    }
-    nav {
-      margin-bottom: 28px;
-      font-size: 0.98rem;
-    }
-    nav a {
-      color: #1f4fd8;
-      text-decoration: none;
-      margin-right: 14px;
-    }
-    nav a:hover { text-decoration: underline; }
-    h1 {
-      font-size: 1.9rem;
-      margin: 0 0 12px 0;
-    }
-    h2 {
-      font-size: 1.05rem;
-      margin: 26px 0 10px 0;
-      color: #222;
-    }
-    p { margin: 12px 0; }
-    ul {
-      margin: 10px 0 0 0;
-      padding-left: 1.2rem;
-    }
-    li { margin: 6px 0; }
-    .hint {
-      margin-top: 22px;
-      padding-top: 14px;
-      border-top: 1px solid #eee;
-      color: #444;
-      font-size: 0.98rem;
-    }
-    footer {
-      margin-top: 44px;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    footer a {
-      color: #1f4fd8;
-      text-decoration: none;
-    }
-    footer a:hover { text-decoration: underline; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
-
 <body>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/systems">Systems</a>
-    <a href="/cv">CV</a>
-    <a href="/contact">Contact</a>
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">Mickael Soussan</span>
+      </div>
+      <div class="nav-links">
+        <a href="/">Overview</a>
+        <a href="/systems">Systems</a>
+        <a href="/cv">Experience</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <h1>About</h1>
+  <main class="container">
+    <header class="hero">
+      <span class="mono-label">PROFILE // ARCHITECT</span>
+      <h1>About the <span class="text-gradient">Work</span></h1>
+      <p class="hero-subtext">
+        I am a Principal AI & Cybersecurity Architect focused on the intersection of 
+        threat research, machine learning, and production system design.
+      </p>
+    </header>
 
-  <p>
-    I am a <strong>Principal AI &amp; Cybersecurity Architect</strong> focused on building
-    <strong>AI-first threat intelligence and security platforms</strong> that operate reliably at scale.
-  </p>
+    <div class="bento-grid">
+      <!-- Main Bio -->
+      <div class="card card-main">
+        <div class="card-header">
+          <span class="mono-label">CORE_MISSION</span>
+          <h2>The Intersection of AI & Cyber</h2>
+        </div>
+        <p class="card-description">
+          I design end-to-end pipelines that turn large volumes of unstructured cyber data into 
+          <strong>high-confidence, structured intelligence</strong>. I operate as a senior individual 
+          contributor, owning systems from initial design through production deployment.
+        </p>
+        
+        <div class="decision-block">
+          <h3>Operating Principles</h3>
+          <ul class="capability-list tight">
+            <li><span class="check"></span> <strong>Data-First:</strong> Design from the data model outward.</li>
+            <li><span class="check"></span> <strong>Traceability:</strong> Precision over raw recall.</li>
+            <li><span class="check"></span> <strong>Bounded AI:</strong> LLMs are fallible subsystems with guardrails.</li>
+            <li><span class="check"></span> <strong>Long-term Bias:</strong> Reliability over short-term velocity.</li>
+          </ul>
+        </div>
+      </div>
 
-  <p>
-    My work sits at the intersection of <strong>cyber threat research</strong>,
-    <strong>machine learning</strong>, and <strong>production system design</strong>.
-    I design end-to-end pipelines that turn large volumes of unstructured cyber data into
-    <strong>high-confidence, structured intelligence</strong> that can be trusted by analysts,
-    automated systems, and downstream products.
-  </p>
+      <!-- Side Stats -->
+      <div class="card card-side">
+        <div class="card-header">
+          <span class="mono-label">FOCUS_AREAS</span>
+          <h2>Expertise</h2>
+        </div>
+        <ul class="capability-list">
+          <li>Agentic RAG Systems</li>
+          <li>Schema Normalization</li>
+          <li>Signal vs Noise Triage</li>
+          <li>Operational Reliability</li>
+        </ul>
+        <div class="card-footer">
+          <p class="mono" style="font-size: 11px;">I prioritize systems that work <strong>predictably</strong> over many that work occasionally.</p>
+        </div>
+      </div>
+    </div>
 
-  <p>
-    I operate as a <strong>senior individual contributor</strong>, owning systems from initial design
-    through production deployment and long-term evolution. My role typically involves defining
-    technical direction, making architectural trade-offs, and translating research-grade ideas
-    into systems that can run continuously, predictably, and cost-effectively.
-  </p>
-
-  <h2>How I work</h2>
-  <p>My approach is shaped by production constraints rather than demos.</p>
-  <ul>
-    <li>I design systems <strong>from the data model outward</strong>, not from the UI inward.</li>
-    <li>I favor <strong>precision, traceability, and explainability</strong> over raw recall when outcomes matter.</li>
-    <li>I treat AI components as <strong>fallible subsystems</strong> that require guardrails, evaluation, and monitoring.</li>
-    <li>I optimize for <strong>long-term maintainability</strong>, not short-term velocity.</li>
-    <li>I assume systems will scale, fail, and be misused — and design accordingly.</li>
-  </ul>
-
-  <p>
-    I am comfortable operating in ambiguity, but I work toward
-    <strong>clear interfaces, explicit assumptions, and measurable behavior</strong>.
-  </p>
-
-  <h2>What I build</h2>
-  <p>Most of my work involves systems such as:</p>
-  <ul>
-    <li>AI-driven threat intelligence enrichment pipelines</li>
-    <li>Agentic LLM systems and retrieval-augmented generation (RAG)</li>
-    <li>Entity extraction and normalization at scale</li>
-    <li>Automation layers that bridge research, data, and production</li>
-    <li>Platforms that balance accuracy, cost, and operational reliability</li>
-  </ul>
-
-  <p>
-    I am particularly interested in the <strong>practical limits of AI systems</strong> — where heuristics,
-    rules, and human judgment still matter, and how to compose them effectively with machine learning.
-  </p>
-
-  <h2>What I don’t optimize for</h2>
-  <p>At this stage of my career, there are things I deliberately avoid:</p>
-  <ul>
-    <li>I don’t build AI demos that cannot be productionized.</li>
-    <li>I don’t optimize for hype or novelty at the expense of correctness.</li>
-    <li>I don’t treat large language models as magic components.</li>
-    <li>I don’t design systems that only work under ideal conditions.</li>
-  </ul>
-
-  <p>
-    I prefer fewer systems that work <strong>predictably</strong> over many systems that work <strong>occasionally</strong>.
-  </p>
-
-  <h2>Scope</h2>
-  <p>
-    I typically work on problems that require:
-  </p>
-  <ul>
-    <li>System-level thinking across multiple components</li>
-    <li>Deep understanding of failure modes and trade-offs</li>
-    <li>Close collaboration with research, product, and security stakeholders</li>
-    <li>Long-term ownership rather than short-term delivery</li>
-  </ul>
-
-  <p>
-    I am most effective in environments that value
-    <strong>technical depth, clarity of thought, and engineering judgment</strong>.
-  </p>
-
-  <div class="hint">
-    If you want to see how this translates into concrete systems, continue to the
-    <a href="/systems">Systems</a> page.
-  </div>
-
-  <footer>
-    © Mickael Soussan · <a href="https://github.com/msoussan">GitHub</a>
-  </footer>
-
+    <footer class="main-footer">
+      <div class="footer-left">© 2024 Mickael Soussan</div>
+      <div class="footer-right">
+        <a href="/systems" class="mono-label">VIEW_SYSTEMS →</a>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
