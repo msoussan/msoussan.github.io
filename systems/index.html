@@ -4,137 +4,209 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Systems — Mickael Soussan</title>
-  <meta name="description" content="Representative systems designed by Mickael Soussan, Principal AI & Cybersecurity Architect." />
-
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-      max-width: 760px;
-      margin: 70px auto;
-      padding: 0 20px;
-      line-height: 1.65;
-      color: #111;
-    }
-    nav {
-      margin-bottom: 28px;
-      font-size: 0.98rem;
-    }
-    nav a {
-      color: #1f4fd8;
-      text-decoration: none;
-      margin-right: 14px;
-    }
-    nav a:hover { text-decoration: underline; }
-
-    h1 {
-      font-size: 1.9rem;
-      margin: 0 0 18px 0;
-    }
-    h2 {
-      font-size: 1.25rem;
-      margin: 32px 0 10px 0;
-    }
-    h3 {
-      font-size: 1.05rem;
-      margin: 22px 0 8px 0;
-      color: #222;
-    }
-    p { margin: 12px 0; }
-
-    ul {
-      margin: 10px 0 0 0;
-      padding-left: 1.2rem;
-    }
-    li { margin: 6px 0; }
-
-    .system {
-      margin-bottom: 48px;
-    }
-
-    .meta {
-      color: #555;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    footer {
-      margin-top: 44px;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    footer a {
-      color: #1f4fd8;
-      text-decoration: none;
-    }
-    footer a:hover { text-decoration: underline; }
-  </style>
+  <meta name="description" content="Systems case studies — AI-first threat intelligence and cybersecurity platforms." />
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 
 <body>
+  <main class="container">
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/systems">Systems</a>
-    <a href="/cv">CV</a>
-    <a href="/contact">Contact</a>
-  </nav>
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <strong>Mickael Soussan</strong>
+      </div>
 
-  <h1>Systems</h1>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/systems">Systems</a>
+        <a href="/cv">CV</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
 
-  <div class="system">
+    <section class="hero" aria-label="Systems overview">
+      <h1>Systems</h1>
+      <p class="subtitle">
+        A selection of <strong>production-grade architectures</strong> I designed and owned end-to-end —
+        focused on <strong>AI-first enrichment</strong>, <strong>agentic systems</strong>, and <strong>high-precision CTI</strong>.
+      </p>
+      <p class="meta">
+        Format: Problem → Constraints → Architecture → Decisions → Outcomes → Next
+      </p>
 
-    <h2>AI-Driven Threat Intelligence Enrichment Platform</h2>
-    <div class="meta">
-      Role: Principal Architect / Senior Individual Contributor
-    </div>
+      <div class="badges" aria-label="Scope tags">
+        <span class="badge"><span class="dot" aria-hidden="true"></span> Production ownership</span>
+        <span class="badge">Pipelines &amp; orchestration</span>
+        <span class="badge">LLM guardrails &amp; evaluation</span>
+        <span class="badge">Schema-first intelligence</span>
+      </div>
+    </section>
 
-    <h3>Context</h3>
-    <p>
-      Modern cyber threat intelligence pipelines ingest large volumes of unstructured data:
-      news articles, technical blogs, advisories, incident reports, and open-source intelligence.
-      The primary challenge is not collection, but <strong>reliable transformation</strong> —
-      converting noisy, heterogeneous text into structured intelligence that can be trusted
-      by analysts and automated systems.
-    </p>
+    <!-- Systems list -->
+    <section class="grid" aria-label="Systems list">
+      <div class="card primary">
+        <h2>Case Studies</h2>
+        <p>
+          Each case study focuses on architectural decisions and operational constraints —
+          not marketing. If you want the shortest path: start with <strong>System 01</strong>.
+        </p>
 
-    <p>
-      This system was designed to address scale, precision, and operational reliability
-      simultaneously, while remaining adaptable to evolving threat landscapes.
-    </p>
+        <div class="kpis" aria-label="Systems index">
+          <div class="kpi">
+            <div class="label">System 01</div>
+            <div class="value">AI-First CTI Pipeline</div>
+            <div class="note">Ingestion → enrichment → storage → analyst UI</div>
+          </div>
+          <div class="kpi">
+            <div class="label">System 02</div>
+            <div class="value">Phishing Domain Triage</div>
+            <div class="note">High-volume classification with layered heuristics</div>
+          </div>
+          <div class="kpi">
+            <div class="label">System 03</div>
+            <div class="value">Agentic Orchestrator</div>
+            <div class="note">Multi-service routing, tool prediction, STM/LTM</div>
+          </div>
+        </div>
 
-    <h3>Architecture</h3>
-    <ul>
-      <li><strong>Ingestion:</strong> Continuous ingestion of heterogeneous text sources with normalization and deduplication.</li>
-      <li><strong>Orchestration:</strong> Pipeline-driven execution with explicit stages, retries, and failure isolation.</li>
-      <li><strong>AI & NLP Layer:</strong> Named Entity Recognition (NER) and classification for threat actors, malware, victims, and campaigns.</li>
-      <li><strong>Enrichment:</strong> Contextual augmentation, cross-referencing, and confidence scoring.</li>
-      <li><strong>Storage:</strong> Structured data models optimized for downstream querying and analysis.</li>
-      <li><strong>Consumers:</strong> Analyst-facing tools and automated detection systems.</li>
-    </ul>
+        <div class="actions">
+          <a class="btn primary" href="#system-01">Open System 01</a>
+          <a class="btn ghost" href="#system-02">System 02</a>
+          <a class="btn ghost" href="#system-03">System 03</a>
+        </div>
+      </div>
 
-    <h3>Key Decisions</h3>
-    <ul>
-      <li>Prioritized <strong>precision and traceability</strong> over raw recall to reduce analyst fatigue.</li>
-      <li>Used AI components as <strong>assistive subsystems</strong>, not authoritative sources.</li>
-      <li>Separated orchestration from enrichment logic to enable independent evolution.</li>
-      <li>Designed explicit schemas to prevent silent semantic drift in extracted entities.</li>
-      <li>Built cost-awareness and evaluation into the pipeline rather than treating them as afterthoughts.</li>
-    </ul>
+      <aside class="card secondary" aria-label="How to read">
+        <h2>How to read these</h2>
+        <ul class="list">
+          <li><strong>Constraints</strong> are the real story: cost, latency, scale, correctness, maintenance.</li>
+          <li><strong>AI is treated as a subsystem</strong>: fallible, evaluated, monitored, and bounded.</li>
+          <li><strong>Schema-first</strong>: structured outputs are designed and enforced explicitly.</li>
+          <li><strong>Operational bias</strong>: reliability and traceability over demo results.</li>
+        </ul>
+        <p style="margin-top: 14px;">
+          Prefer the full story? See <a href="/cv">CV</a>.
+        </p>
+      </aside>
+    </section>
 
-    <h3>Outcomes</h3>
-    <ul>
-      <li>Significant reduction in manual analyst effort for routine enrichment tasks.</li>
-      <li>Improved consistency and quality of structured intelligence.</li>
-      <li>Increased reliability of downstream automation relying on enriched data.</li>
-      <li>A platform capable of evolving with new AI techniques without destabilizing production workflows.</li>
-    </ul>
+    <!-- ========================= -->
+    <!-- System 01: Case Study -->
+    <!-- ========================= -->
+    <section id="system-01" class="card" style="margin-top: 18px;" aria-label="System 01 case study">
+      <h2>System 01 — AI-First Cyber Threat Intelligence Pipeline</h2>
+      <p class="meta">
+        Type: Production pipeline · Pattern: ingestion → enrichment → storage → consumers · Primary user: analysts + downstream automation
+      </p>
 
-  </div>
+      <h3 style="margin-top: 18px; font-size: 1.05rem;">Problem</h3>
+      <p>
+        Convert a high volume of heterogeneous cybersecurity content (feeds, reports, advisories, blogs)
+        into <strong>reliable, structured intelligence</strong> that analysts can trust and that automation can consume.
+        The challenge is not summarization — it’s <strong>precision, consistency, and operational scalability</strong>.
+      </p>
 
-  <footer>
-    © Mickael Soussan · <a href="https://github.com/msoussan">GitHub</a>
-  </footer>
+      <h3 style="margin-top: 18px; font-size: 1.05rem;">Constraints</h3>
+      <ul class="list">
+        <li><strong>Correctness &amp; trust</strong>: avoid generic or invented entities; outputs must be traceable.</li>
+        <li><strong>Cost control</strong>: LLM calls are budgeted; avoid wasting tokens on low-signal content.</li>
+        <li><strong>Throughput</strong>: continuous ingestion with batching, retries, and backpressure.</li>
+        <li><strong>Operational maintenance</strong>: logging, run artifacts, reproducibility, and monitoring are non-negotiable.</li>
+      </ul>
 
+      <h3 style="margin-top: 18px; font-size: 1.05rem;">Architecture (high level)</h3>
+      <p class="meta">Core idea: schema-first enrichment + multi-stage filtering + AI as bounded tools.</p>
+
+      <div class="kpis" aria-label="Architecture blocks">
+        <div class="kpi">
+          <div class="label">Ingestion</div>
+          <div class="value">RSS / URLs</div>
+          <div class="note">Deduping, normalization, source scoring</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Triage</div>
+          <div class="value">Signal gating</div>
+          <div class="note">Skip low-value content before AI spend</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Enrichment</div>
+          <div class="value">LLM + rules</div>
+          <div class="note">Entities, CVEs, IOCs, taxonomy, titles</div>
+        </div>
+      </div>
+
+      <div class="kpis" style="margin-top: 12px;" aria-label="Architecture blocks 2">
+        <div class="kpi">
+          <div class="label">Storage</div>
+          <div class="value">DB + vector</div>
+          <div class="note">Structured store + retrieval layer</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Consumers</div>
+          <div class="value">Dashboards</div>
+          <div class="note">Analyst UI, reports, search, exports</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Ops</div>
+          <div class="value">Artifacts</div>
+          <div class="note">Logs, run IDs, CSV/JSON outputs, metrics</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 18px; font-size: 1.05rem;">Key decisions</h3>
+      <ul class="list">
+        <li><strong>Schema-first extraction</strong> with strict JSON constraints and enumerations for high precision.</li>
+        <li><strong>Multi-stage gating</strong> to minimize AI spend: classify relevance before enrichment.</li>
+        <li><strong>Guardrails &amp; consistency rules</strong> (e.g., “no generic entities”, mandatory victim extraction, etc.).</li>
+        <li><strong>End-to-end traceability</strong>: store prompts/versions, outputs, and run artifacts for auditability.</li>
+        <li><strong>Cost accounting</strong>: token/cost tracking per model to keep the system sustainable.</li>
+      </ul>
+
+      <h3 style="margin-top: 18px; font-size: 1.05rem;">Outcomes</h3>
+      <ul class="list">
+        <li>Reliable entity-rich intelligence with an analyst-editable workflow.</li>
+        <li>Scalable pipeline with reproducible outputs (run IDs, artifacts).</li>
+        <li>Operational control over quality, cost, and long-term maintainability.</li>
+      </ul>
+
+      <h3 style="margin-top: 18px; font-size: 1.05rem;">Next</h3>
+      <ul class="list">
+        <li>Formalize evaluation suites (precision/recall per entity type, drift tracking).</li>
+        <li>Add automated regression testing for prompts and rule changes.</li>
+        <li>Expand “original source detection” and multi-source attribution.</li>
+      </ul>
+
+      <div class="actions" style="margin-top: 16px;">
+        <a class="btn primary" href="/contact">Discuss this system</a>
+        <a class="btn ghost" href="#top">Back to top</a>
+      </div>
+    </section>
+
+    <!-- Placeholders for next systems -->
+    <section id="system-02" class="card" style="margin-top: 18px;" aria-label="System 02 placeholder">
+      <h2>System 02 — Phishing Domain Triage &amp; Refinement (Placeholder)</h2>
+      <p class="meta">Coming next: high-volume domain classification pipeline with layered heuristics and explainable outcomes.</p>
+      <p>
+        This case study will cover the funnel design (ignore/scan/benign/gibberish/suspicious),
+        brand permutation logic, entropy heuristics, and operational artifacts (CSV outputs, debug decisions).
+      </p>
+    </section>
+
+    <section id="system-03" class="card" style="margin-top: 18px;" aria-label="System 03 placeholder">
+      <h2>System 03 — Agentic Orchestrator &amp; Microservice Tooling (Placeholder)</h2>
+      <p class="meta">Coming next: orchestrator routing, tool prediction, STM/LTM, and production-grade service boundaries.</p>
+      <p>
+        This case study will cover multi-service architecture, Redis queues, arq workers, routing logic,
+        and building reliable agentic systems with explicit interfaces.
+      </p>
+    </section>
+
+    <footer class="footer" style="margin-top: 26px;">
+      © Mickael Soussan · <a href="https://github.com/msoussan">GitHub</a>
+    </footer>
+
+  </main>
 </body>
 </html>
