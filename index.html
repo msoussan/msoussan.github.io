@@ -5,117 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mickael Soussan — Principal AI & Cybersecurity Architect</title>
   <meta name="description" content="Principal AI & Cybersecurity Architect designing AI-first threat intelligence and cybersecurity platforms." />
-
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-      max-width: 760px;
-      margin: 70px auto;
-      padding: 0 20px;
-      line-height: 1.65;
-      color: #111;
-    }
-    nav {
-      margin-bottom: 28px;
-      font-size: 0.98rem;
-    }
-    nav a {
-      color: #1f4fd8;
-      text-decoration: none;
-      margin-right: 14px;
-    }
-    nav a:hover { text-decoration: underline; }
-
-    h1 {
-      font-size: 2.2rem;
-      margin: 0 0 6px 0;
-    }
-    h2 {
-      font-size: 1.1rem;
-      font-weight: normal;
-      color: #444;
-      margin: 0 0 18px 0;
-    }
-
-    p { margin: 12px 0; }
-
-    .actions {
-      margin-top: 18px;
-    }
-    .actions a {
-      display: inline-block;
-      margin-right: 12px;
-      padding: 10px 14px;
-      border: 1px solid #e6e6e6;
-      border-radius: 10px;
-      color: #111;
-      text-decoration: none;
-      background: #fff;
-    }
-    .actions a:hover {
-      border-color: #cfd8ff;
-      text-decoration: none;
-    }
-
-    ul {
-      margin: 18px 0 0 0;
-      padding-left: 1.2rem;
-    }
-    li { margin: 6px 0; }
-
-    footer {
-      margin-top: 44px;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    footer a {
-      color: #1f4fd8;
-      text-decoration: none;
-    }
-    footer a:hover { text-decoration: underline; }
-  </style>
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 
 <body>
+  <main class="container">
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/systems">Systems</a>
-    <a href="/cv">CV</a>
-    <a href="/contact">Contact</a>
-  </nav>
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <strong>Mickael Soussan</strong>
+      </div>
 
-  <h1>Mickael Soussan</h1>
-  <h2>Principal AI &amp; Cybersecurity Architect</h2>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/systems">Systems</a>
+        <a href="/cv">CV</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
 
-  <p>
-    I design <strong>AI-first cybersecurity and threat intelligence platforms</strong>,
-    with a focus on <strong>agentic AI systems</strong>, <strong>high-precision enrichment</strong>,
-    and <strong>production-grade architecture</strong>.
-  </p>
+    <section class="hero" aria-label="Overview">
+      <h1>Principal AI &amp; Cybersecurity Architect</h1>
+      <p class="subtitle">
+        I build <strong>AI-first threat intelligence and cybersecurity platforms</strong> —
+        designed for <strong>precision</strong>, <strong>cost-aware scale</strong>, and <strong>production reliability</strong>.
+      </p>
 
-  <p>
-    My work centers on transforming large volumes of unstructured cyber data into
-    <strong>reliable, structured intelligence</strong> through scalable pipelines that balance
-    accuracy, cost, and long-term maintainability. I operate as a senior individual contributor,
-    owning systems end-to-end and shaping technical direction.
-  </p>
+      <div class="badges" aria-label="Status">
+        <span class="badge"><span class="dot" aria-hidden="true"></span> Operational mindset</span>
+        <span class="badge">Agentic systems &amp; RAG</span>
+        <span class="badge">Structured intelligence</span>
+        <span class="badge">End-to-end ownership</span>
+      </div>
+    </section>
 
-  <div class="actions">
-    <a href="/cv">Download CV</a>
-    <a href="/contact">Contact</a>
-  </div>
+    <section class="grid" aria-label="System overview grid">
+      <div class="card">
+        <h2>System Overview</h2>
+        <p>
+          I design pipelines that transform unstructured cyber data into <strong>reliable, structured intelligence</strong> —
+          with explicit schemas, evaluation, traceability, and operational guardrails.
+        </p>
 
-  <ul>
-    <li>AI-driven threat intelligence platforms</li>
-    <li>Agentic LLM systems &amp; RAG</li>
-    <li>End-to-end platform architecture (ingestion → enrichment → storage → consumers)</li>
-  </ul>
+        <div class="kpis" aria-label="Key indicators">
+          <div class="kpi">
+            <div class="label">Focus</div>
+            <div class="value">CTI Platforms</div>
+            <div class="note">AI-first enrichment &amp; orchestration</div>
+          </div>
 
-  <footer>
-    © Mickael Soussan · <a href="https://github.com/msoussan">GitHub</a>
-  </footer>
+          <div class="kpi">
+            <div class="label">Strength</div>
+            <div class="value">Precision</div>
+            <div class="note">High-signal extraction over noise</div>
+          </div>
 
+          <div class="kpi">
+            <div class="label">Mode</div>
+            <div class="value">Production</div>
+            <div class="note">Reliability, observability, cost control</div>
+          </div>
+        </div>
+
+        <div class="actions" aria-label="Primary actions">
+          <a class="btn primary" href="/systems">View Systems</a>
+          <a class="btn" href="/cv">Download CV</a>
+          <a class="btn" href="/contact">Contact</a>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="Capabilities">
+        <h2>Capabilities</h2>
+        <ul class="list">
+          <li>AI-driven threat intelligence platforms</li>
+          <li>Agentic LLM systems, RAG, retrieval and routing</li>
+          <li>Entity extraction, normalization, and schema design</li>
+          <li>Pipeline orchestration, evaluation, monitoring, and reliability</li>
+          <li>End-to-end architecture (ingestion → enrichment → storage → consumers)</li>
+        </ul>
+
+        <p style="margin-top: 14px;">
+          Start with <a href="/systems">Systems</a> to see concrete case studies.
+        </p>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      © Mickael Soussan · <a href="https://github.com/msoussan">GitHub</a>
+    </footer>
+
+  </main>
 </body>
 </html>
