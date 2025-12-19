@@ -4,116 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mickael Soussan — Principal AI & Cybersecurity Architect</title>
-  <meta name="description" content="Principal AI & Cybersecurity Architect designing AI-first threat intelligence systems." />
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Using Inter for UI and JetBrains Mono for technical data -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="container">
 
-    <!-- Header -->
-    <header class="header card">
+  <!-- Sticky Glassmorphism Nav -->
+  <nav class="navbar">
+    <div class="nav-content">
       <div class="brand">
         <span class="brand-dot"></span>
-        Mickael Soussan
+        <span class="brand-name">Mickael Soussan</span>
       </div>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+      <div class="nav-links">
+        <a href="/" class="active">Overview</a>
         <a href="/systems">Systems</a>
-        <a href="/cv">CV</a>
-        <a href="/contact">Contact</a>
-      </nav>
+        <a href="/cv">Experience</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="status-badge">
+        <span class="pulse-dot"></span>
+        Status: Designing production AI systems
+      </div>
+      <h1>Principal AI & <span class="text-gradient">Cybersecurity</span> Architect</h1>
+      <p class="hero-subtext">
+        I build <strong>AI-first threat intelligence platforms</strong> that convert unstructured data into 
+        high-confidence intelligence — designed for precision, cost-aware scale, and production reliability.
+      </p>
+      <div class="tag-group">
+        <span class="tag">Operational Mindset</span>
+        <span class="tag">Agentic Systems & RAG</span>
+        <span class="tag">End-to-End Ownership</span>
+      </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero card">
-      <h1>Principal AI &amp; Cybersecurity Architect</h1>
-
-      <p>
-        I build <strong>AI-first threat intelligence and cybersecurity platforms</strong>
-        that convert unstructured cyber data into
-        <strong>high-confidence, operational intelligence</strong> —
-        designed for precision, cost-aware scale, and production reliability.
-      </p>
-
-      <p class="meta">
-        Status: Active — designing and operating production AI systems
-      </p>
-
-      <div class="pills">
-        <div class="pill"><span class="dot"></span>Operational mindset</div>
-        <div class="pill">Agentic systems &amp; RAG</div>
-        <div class="pill">End-to-end ownership</div>
-      </div>
-    </section>
-
-    <!-- Main Grid -->
-    <section class="grid">
-
-      <!-- System Overview -->
-      <div class="overview card">
-        <h2>System Overview</h2>
-
-        <p>
-          I design pipelines that transform unstructured cyber data into
-          <strong>reliable, structured intelligence</strong> — with explicit schemas,
-          evaluation, traceability, and operational guardrails.
+    <!-- Bento Grid -->
+    <section class="bento-grid">
+      
+      <!-- Main Overview Card -->
+      <div class="card card-main">
+        <div class="card-header">
+          <span class="mono-label">01 // ARCHITECTURE</span>
+          <h2>System Overview</h2>
+        </div>
+        
+        <p class="card-description">
+          Pipelines transforming unstructured cyber data into <strong>reliable, structured intelligence</strong> with explicit schemas and operational guardrails.
         </p>
 
-        <p class="meta">
-          Scope: ingestion → enrichment → normalization → storage → consumers
-        </p>
+        <!-- Visual Pipeline -->
+        <div class="pipeline-visual">
+          <div class="node">Ingest</div>
+          <div class="connector"></div>
+          <div class="node">Enrich</div>
+          <div class="connector"></div>
+          <div class="node">Normalize</div>
+          <div class="connector"></div>
+          <div class="node">Store</div>
+        </div>
 
-        <div class="kpis">
-          <div class="kpi">
-            <label>Focus</label>
-            <strong>CTI Platforms</strong><br />
-            AI-first enrichment &amp; orchestration
+        <div class="kpi-grid">
+          <div class="kpi-item">
+            <span class="kpi-label">Focus</span>
+            <span class="kpi-value">CTI Platforms</span>
           </div>
-
-          <div class="kpi">
-            <label>Strength</label>
-            <strong>Precision</strong><br />
-            High-signal extraction over noise
+          <div class="kpi-item">
+            <span class="kpi-label">Strength</span>
+            <span class="kpi-value">Precision Extraction</span>
           </div>
-
-          <div class="kpi">
-            <label>Mode</label>
-            <strong>Production</strong><br />
-            Reliability, observability, cost control
+          <div class="kpi-item">
+            <span class="kpi-label">Mode</span>
+            <span class="kpi-value">Production Grade</span>
           </div>
         </div>
 
-        <div class="actions">
-          <a href="/systems" class="btn primary">View Systems</a>
-          <a href="/cv" class="btn">Download CV</a>
-          <a href="/contact" class="btn">Contact</a>
+        <div class="card-actions">
+          <a href="/systems" class="btn btn-primary">View Case Studies</a>
+          <a href="/cv" class="btn btn-secondary">Download CV</a>
         </div>
       </div>
 
-      <!-- Capabilities -->
-      <div class="capabilities card">
-        <h2>Capabilities</h2>
-        <ul>
-          <li>AI-driven threat intelligence platforms</li>
-          <li>Agentic LLM systems, RAG, retrieval and routing</li>
-          <li>Entity extraction, normalization, and schema design</li>
-          <li>Pipeline orchestration, evaluation, monitoring, reliability</li>
-          <li>End-to-end architecture (ingestion → enrichment → storage → consumers)</li>
+      <!-- Capabilities Card -->
+      <div class="card card-side">
+        <div class="card-header">
+          <span class="mono-label">02 // STACK</span>
+          <h2>Capabilities</h2>
+        </div>
+        <ul class="capability-list">
+          <li>
+            <span class="check"></span>
+            AI-driven threat intelligence
+          </li>
+          <li>
+            <span class="check"></span>
+            Agentic LLM & RAG Systems
+          </li>
+          <li>
+            <span class="check"></span>
+            Entity Normalization
+          </li>
+          <li>
+            <span class="check"></span>
+            Pipeline Orchestration
+          </li>
+          <li>
+            <span class="check"></span>
+            Observability & Reliability
+          </li>
         </ul>
-
-        <p class="meta">
-          <strong>Start with <a href="/systems">Systems</a></strong> to see concrete, production case studies.
-        </p>
+        <div class="card-footer">
+          <p>Explore <strong>Systems</strong> for technical deep-dives.</p>
+        </div>
       </div>
 
     </section>
 
-    <footer>
-      © Mickael Soussan · <a href="https://github.com/msoussan">GitHub</a>
+    <footer class="main-footer">
+      <div class="footer-left">© 2024 Mickael Soussan</div>
+      <div class="footer-right">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
     </footer>
+  </main>
 
-  </div>
 </body>
 </html>
