@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Systems — Mickael Soussan</title>
+  <meta name="description" content="Case studies of production AI systems for cyber threat intelligence: an end-to-end intelligence pipeline and an agentic investigation system." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://mickaelsoussan.com/systems/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Systems — Mickael Soussan" />
+  <meta property="og:description" content="Production AI architectures for cyber threat intelligence: schema-first pipelines and evidence-backed agentic investigation." />
+  <meta property="og:url" content="https://mickaelsoussan.com/systems/" />
+  <meta property="og:site_name" content="Mickael Soussan" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Systems — Mickael Soussan" />
+  <meta name="twitter:description" content="Production AI architectures for cyber threat intelligence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- FontAwesome for sexy diagram icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">Mickael Soussan</span>
+      </div>
+      <div class="nav-links">
+        <a href="/">Overview</a>
+        <a href="/systems" class="active">Systems</a>
+        <a href="/cv">Experience</a>
+        <a href="/contact" class="nav-cta">Contact</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <header class="hero">
+      <div class="status-badge">
+        <span class="pulse-dot"></span>
+        Deep Dive: Production Architectures
+      </div>
+      <h1>System <span class="text-gradient">Case Studies</span></h1>
+      <p class="hero-subtext">
+        Production AI systems that turn noisy external reporting into structured intelligence and evidence-backed workflows for analysts and decision-makers.
+      </p>
+    </header>
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- SYSTEM 01: AI-FIRST CTI PIPELINE                    -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <article id="system-01" class="case-study-section">
+      <div class="card">
+        <div class="case-study-header">
+          <div class="header-main">
+            <span class="mono-label">CASE_STUDY_01</span>
+            <h2>AI-First Cyber Threat Intelligence Pipeline</h2>
+          </div>
+          <div class="header-action">
+            <a href="/contact" class="btn btn-secondary">Discuss Design</a>
+          </div>
+        </div>
+
+        <div class="impact-stats">
+          <div class="stat-card">
+            <span class="stat-number">Broad</span>
+            <span class="stat-label">Source Coverage</span>
+            <span class="stat-description">Continuous intake across external reporting, advisories, and intelligence feeds.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Structured</span>
+            <span class="stat-label">Processing Model</span>
+            <span class="stat-description">Collection, enrichment, normalization, clustering, and delivery are kept explicitly separated.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Fast</span>
+            <span class="stat-label">Turnaround</span>
+            <span class="stat-description">Built for quick end-to-end refresh without giving up operational control.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Modular</span>
+            <span class="stat-label">Service Design</span>
+            <span class="stat-description">Responsibilities are separated so reliability, maintenance, and cost can be managed deliberately.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Hybrid</span>
+            <span class="stat-label">Data Layer</span>
+            <span class="stat-description">Search, storage, and serving are designed to support both enrichment workflows and analyst consumption.</span>
+          </div>
+        </div>
+
+        <div class="solution-prose">
+          <h3>Problem</h3>
+          <p>Cybersecurity teams operate on top of a constant stream of unstructured data — RSS feeds, vendor reports, and external intelligence sources. Raw data is noisy, duplicated, and inconsistent. Generic summarization loses the entities and relationships that make intelligence actionable. The challenge is not collecting data — it is turning it into something structured, reliable, and usable at scale.</p>
+
+          <h3>Approach</h3>
+          <p>I designed an end-to-end pipeline that ingests broad external coverage, rejects noise early, and enforces structure through schema-first extraction. Collection, enrichment, normalization, and serving are separated on purpose so the system remains observable, maintainable, and cost-aware in production.</p>
+
+          <h3>Key Design Decisions</h3>
+          <ul class="decision-list">
+            <li><strong>Early rejection</strong> filters irrelevant data before expensive AI processing starts.</li>
+            <li><strong>Schema-first extraction</strong> reduces ambiguity and avoids brittle post-processing cleanup.</li>
+            <li><strong>Entity normalization</strong> keeps actors, malware, vulnerabilities, and other signals consistent across sources.</li>
+            <li><strong>Clustering and temporal linking</strong> reconstruct evolving narratives instead of leaving analysts with isolated articles.</li>
+            <li><strong>Multi-signal scoring</strong> prioritizes the stories and entities that matter operationally.</li>
+          </ul>
+
+          <h3>Outcome</h3>
+          <p>The system turns raw reporting into structured intelligence that analysts can follow as evolving stories rather than isolated articles. It supports tracking campaigns, vulnerabilities, and actors over time while keeping reliability and operational control in view.</p>
+        </div>
+
+        <!-- MERMAID DIAGRAM: SYSTEM 01 -->
+        <div class="mermaid-container" data-diagram="pipeline" data-layout="LR">
+          <div class="diagram-header">
+            <span class="mono-label diagram-title"><i class="fa-solid fa-diagram-project"></i> Pipeline Architecture</span>
+            <button type="button" class="diagram-layout-toggle" aria-controls="diagram-pipeline" aria-pressed="false">Switch to top-down view</button>
+          </div>
+          <div class="diagram-legend" aria-hidden="true">
+            <span class="legend-chip legend-chip-agent">AI agent</span>
+            <span class="legend-chip legend-chip-specialist">Specialist subagent</span>
+            <span class="legend-chip legend-chip-logic">Deterministic logic</span>
+            <span class="legend-chip legend-chip-data">Data / infrastructure</span>
+          </div>
+          <p class="diagram-layout-hint">Default is left-to-right. Click the diagram or use the toggle to switch views.</p>
+          <div class="diagram-interactive" role="button" tabindex="0" aria-controls="diagram-pipeline" aria-label="Switch pipeline architecture diagram to top-down view">
+            <div class="mermaid-diagram" id="diagram-pipeline" role="img" aria-label="AI-first cyber threat intelligence pipeline architecture diagram"></div>
+          </div>
+        </div>
+
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">Streamlit</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">Qdrant</span>
+          <span class="tech-tag">OpenAI Agents SDK</span>
+          <span class="tech-tag">Docker Compose</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Divider note moved below -->
+
+    <!-- ════════════════════════════════════════════════════ -->
+    <!-- SYSTEM 02: AGENTIC CTI INVESTIGATOR                 -->
+    <!-- ════════════════════════════════════════════════════ -->
+    <article id="system-02" class="case-study-section">
+      <div class="card">
+        <div class="case-study-header">
+          <div class="header-main">
+            <span class="mono-label">CASE_STUDY_02</span>
+            <h2>Agentic CTI Investigator</h2>
+          </div>
+          <div class="header-action">
+            <a href="/contact" class="btn btn-secondary">Discuss Design</a>
+          </div>
+        </div>
+
+        <div class="impact-stats">
+          <div class="stat-card">
+            <span class="stat-number">Focused</span>
+            <span class="stat-label">Specialist Reasoning</span>
+            <span class="stat-description">Targeted timeline, correlation, comparison, and trend analysis when the question demands it.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Measured</span>
+            <span class="stat-label">Quality Discipline</span>
+            <span class="stat-description">Internal evaluation is used to check grounding, routing quality, and answer robustness.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Efficient</span>
+            <span class="stat-label">Repeat Investigations</span>
+            <span class="stat-description">Reuse and caching reduce repeated analysis cost and turnaround for common investigation patterns.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">Grounded</span>
+            <span class="stat-label">Answer Quality</span>
+            <span class="stat-description">Designed for high grounded-answer precision rather than generic chatbot fluency.</span>
+          </div>
+        </div>
+
+        <div class="solution-prose">
+          <h3>Problem</h3>
+          <p>Analysts do not need a chatbot — they need an investigation system. Questions require context, follow-ups, comparisons, and evidence-backed answers. A single prompt cannot manage retrieval, reasoning, and validation reliably.</p>
+
+          <h3>Approach</h3>
+          <p>I designed a multi-agent investigation system where orchestration, retrieval, specialist reasoning, and verification are separated into explicit layers. Depending on the question, it can take a direct retrieval path, a structured analysis path, or a deeper specialist path while staying grounded in evidence.</p>
+
+          <h3>Key Design Decisions</h3>
+          <ul class="decision-list">
+            <li><strong>Adaptive routing</strong> lets the system match its execution path to the actual question type.</li>
+            <li><strong>Live context injection</strong> keeps reasoning aligned with the current data model rather than a static prompt snapshot.</li>
+            <li><strong>Specialist agents</strong> add targeted reasoning for timeline, correlation, comparison, and trend questions.</li>
+            <li><strong>Layered verification</strong> combines model review with deterministic checks so answers stay grounded.</li>
+            <li><strong>Controlled revision loops</strong> improve reliability when retrieval or grounding issues are detected.</li>
+          </ul>
+
+          <h3>Outcome</h3>
+          <p>The system produces grounded answers, structured reports, and proactive monitoring outputs backed by explicit evidence. It behaves less like a chatbot and more like a controlled investigation workflow.</p>
+
+        </div>
+
+        <!-- MERMAID DIAGRAM: SYSTEM 03 -->
+        <div class="mermaid-container" data-diagram="investigator" data-layout="LR">
+          <div class="diagram-header">
+            <span class="mono-label diagram-title"><i class="fa-solid fa-network-wired"></i> Investigation Architecture</span>
+            <button type="button" class="diagram-layout-toggle" aria-controls="diagram-investigator" aria-pressed="false">Switch to top-down view</button>
+          </div>
+          <div class="diagram-legend" aria-hidden="true">
+            <span class="legend-chip legend-chip-agent">AI agent</span>
+            <span class="legend-chip legend-chip-specialist">Specialist subagent</span>
+            <span class="legend-chip legend-chip-logic">Deterministic logic</span>
+            <span class="legend-chip legend-chip-data">Data / infrastructure</span>
+          </div>
+          <p class="diagram-layout-hint">Default is left-to-right. Click the diagram or use the toggle to switch views.</p>
+          <div class="diagram-interactive" role="button" tabindex="0" aria-controls="diagram-investigator" aria-label="Switch investigation architecture diagram to top-down view">
+            <div class="mermaid-diagram" id="diagram-investigator" role="img" aria-label="Agentic CTI investigator architecture diagram"></div>
+          </div>
+        </div>
+
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">OpenAI Agents SDK</span>
+          <span class="tech-tag">Model Context Protocol</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Docker</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Divider note: additional case studies in preparation -->
+    <section class="case-study-note">
+      <p class="mono-label">More case studies in preparation.</p>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-left">&copy; 2026 Mickael Soussan</div>
+      <div class="footer-right">
+        <a href="#top" class="mono-label">BACK_TO_TOP ↑</a>
+      </div>
+    </footer>
+  </main>
+  
+  <script src="/assets/theme.js"></script>
+  <!-- Initialize Mermaid.js -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: 'loose',
+      fontFamily: 'Inter, sans-serif'
+    });
+
+    (function () {
+      var renderSequence = 0;
+
+      function getDiagramName(container) {
+        return container.dataset.diagram === 'pipeline'
+          ? 'pipeline architecture'
+          : 'investigation architecture';
+      }
+
+      function getDiagramDirection(container) {
+        var explicit = container.dataset.userLayout;
+        if (explicit === 'TB' || explicit === 'LR') {
+          return explicit;
+        }
+        var isNarrow = window.matchMedia('(max-width: 720px)').matches;
+        if (isNarrow) {
+          return 'TB';
+        }
+        return container.dataset.layout === 'TB' ? 'TB' : 'LR';
+      }
+
+      function syncDiagramControls(container) {
+        var isTopDown = getDiagramDirection(container) === 'TB';
+        var button = container.querySelector('.diagram-layout-toggle');
+        var interactive = container.querySelector('.diagram-interactive');
+        var diagramName = getDiagramName(container);
+
+        container.classList.toggle('is-top-down', isTopDown);
+
+        if (button) {
+          button.textContent = isTopDown ? 'Switch to left-right view' : 'Switch to top-down view';
+          button.setAttribute('aria-pressed', String(isTopDown));
+        }
+
+        if (interactive) {
+          interactive.setAttribute(
+            'aria-label',
+            isTopDown
+              ? 'Switch ' + diagramName + ' diagram to left-to-right view'
+              : 'Switch ' + diagramName + ' diagram to top-down view'
+          );
+        }
+      }
+
+      function getThemePalette() {
+        var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        return isLight ? {
+          diagramBg: '#f8fafc',
+          clusterBg: '#ffffff',
+          clusterBorder: '#cbd5e1',
+          line: '#64748b',
+          agentClusterBg: '#e0f2fe',
+          agentClusterBorder: '#7dd3fc',
+          specialistClusterBg: '#eef2ff',
+          specialistClusterBorder: '#a5b4fc',
+          sourceFill: '#ffffff',
+          sourceStroke: '#94a3b8',
+          sourceText: '#0f172a',
+          agentFill: '#0284c7',
+          agentStroke: '#bae6fd',
+          agentText: '#ffffff',
+          specialistFill: '#4f46e5',
+          specialistStroke: '#c7d2fe',
+          specialistText: '#ffffff',
+          filterFill: '#fff1f2',
+          filterStroke: '#fda4af',
+          filterText: '#881337',
+          logicFill: '#f8fafc',
+          logicStroke: '#94a3b8',
+          logicText: '#0f172a',
+          dbFill: '#ecfdf5',
+          dbStroke: '#34d399',
+          dbText: '#14532d',
+          outFill: '#eef2ff',
+          outStroke: '#a5b4fc',
+          outText: '#312e81',
+          decisionFill: '#eef2ff',
+          decisionStroke: '#818cf8',
+          decisionText: '#312e81',
+          surfaceFill: '#eff6ff',
+          surfaceStroke: '#7dd3fc',
+          surfaceText: '#0f172a',
+          userFill: '#ffffff',
+          userStroke: '#94a3b8',
+          userText: '#0f172a'
+        } : {
+          diagramBg: '#0f172a',
+          clusterBg: '#111827',
+          clusterBorder: '#334155',
+          line: '#64748b',
+          agentClusterBg: '#0f2f43',
+          agentClusterBorder: '#38bdf8',
+          specialistClusterBg: '#23264a',
+          specialistClusterBorder: '#818cf8',
+          sourceFill: '#0f172a',
+          sourceStroke: '#cbd5e1',
+          sourceText: '#f8fafc',
+          agentFill: '#0284c7',
+          agentStroke: '#bae6fd',
+          agentText: '#ffffff',
+          specialistFill: '#4f46e5',
+          specialistStroke: '#a5b4fc',
+          specialistText: '#eef2ff',
+          filterFill: '#450a0a',
+          filterStroke: '#fca5a5',
+          filterText: '#fef2f2',
+          logicFill: '#1e293b',
+          logicStroke: '#64748b',
+          logicText: '#f8fafc',
+          dbFill: '#064e3b',
+          dbStroke: '#34d399',
+          dbText: '#ecfdf5',
+          outFill: '#312e81',
+          outStroke: '#818cf8',
+          outText: '#e0e7ff',
+          decisionFill: '#312e81',
+          decisionStroke: '#818cf8',
+          decisionText: '#e0e7ff',
+          surfaceFill: '#1e293b',
+          surfaceStroke: '#38bdf8',
+          surfaceText: '#e0f2fe',
+          userFill: '#0f172a',
+          userStroke: '#cbd5e1',
+          userText: '#f8fafc'
+        };
+      }
+
+      function buildInitBlock(palette) {
+        return '%%{init: ' + JSON.stringify({
+          theme: 'base',
+          flowchart: { htmlLabels: true, curve: 'basis' },
+          themeVariables: {
+            fontFamily: 'Inter',
+            primaryColor: palette.clusterBg,
+            primaryTextColor: palette.logicText,
+            primaryBorderColor: palette.clusterBorder,
+            lineColor: palette.line,
+            secondaryColor: palette.diagramBg,
+            tertiaryColor: palette.clusterBg,
+            clusterBkg: palette.clusterBg,
+            clusterBorder: palette.clusterBorder
+          }
+        }) + '}%%';
+      }
+
+      function buildPipelineDiagram(direction, palette) {
+        return [
+          buildInitBlock(palette),
+          'flowchart ' + direction,
+          'classDef source fill:' + palette.sourceFill + ',stroke:' + palette.sourceStroke + ',color:' + palette.sourceText + ',stroke-width:2px,rx:8,ry:8',
+          'classDef agent fill:' + palette.agentFill + ',stroke:' + palette.agentStroke + ',color:' + palette.agentText + ',stroke-width:3px,rx:8,ry:8',
+          'classDef specialist fill:' + palette.specialistFill + ',stroke:' + palette.specialistStroke + ',color:' + palette.specialistText + ',stroke-width:3px,rx:8,ry:8',
+          'classDef filter fill:' + palette.filterFill + ',stroke:' + palette.filterStroke + ',color:' + palette.filterText + ',stroke-width:2px,rx:8,ry:8',
+          'classDef logic fill:' + palette.logicFill + ',stroke:' + palette.logicStroke + ',color:' + palette.logicText + ',stroke-width:1px,rx:8,ry:8',
+          'classDef db fill:' + palette.dbFill + ',stroke:' + palette.dbStroke + ',color:' + palette.dbText + ',stroke-width:2px,rx:8,ry:8',
+          'classDef out fill:' + palette.outFill + ',stroke:' + palette.outStroke + ',color:' + palette.outText + ',stroke-width:2px,rx:8,ry:8',
+          'subgraph Sources["fa:fa-download External sources"]',
+          'direction TB',
+          'REPORTING([fa:fa-rss External reporting]):::source',
+          'ADVISORIES([fa:fa-shield Advisories and bulletins]):::source',
+          'end',
+          'subgraph Pipeline["fa:fa-wand-magic-sparkles Intelligence pipeline"]',
+          'direction TB',
+          'INTAKE[fa:fa-layer-group Collection and<br>filtering]:::logic',
+          'subgraph ENRICH_AGENTS["fa:fa-robot Agentic enrichment"]',
+          'direction TB',
+          'TRIAGE[fa:fa-filter AI triage]:::agent',
+          'ENRICH[fa:fa-cube Structured enrichment]:::agent',
+          'end',
+          'SHAPE[fa:fa-brain Clustering, linking<br>and prioritization]:::logic',
+          'INTAKE --> TRIAGE',
+          'TRIAGE --> ENRICH',
+          'ENRICH --> SHAPE',
+          'end',
+          'subgraph Delivery["fa:fa-cloud Analyst delivery"]',
+          'direction TB',
+          'STORE[(fa:fa-database Intelligence layer)]:::db',
+          'SURFACE[[fa:fa-chart-line Analyst surface]]:::out',
+          'STORE --> SURFACE',
+          'end',
+          'REPORTING --> INTAKE',
+          'ADVISORIES --> INTAKE',
+          'SHAPE ==> STORE',
+          'style ENRICH_AGENTS fill:' + palette.agentClusterBg + ',stroke:' + palette.agentClusterBorder + ',stroke-width:2px'
+        ].join('\n');
+      }
+
+      function buildInvestigatorDiagram(direction, palette) {
+        return [
+          buildInitBlock(palette),
+          'flowchart ' + direction,
+          'classDef user fill:' + palette.userFill + ',stroke:' + palette.userStroke + ',color:' + palette.userText + ',stroke-width:2px,rx:8,ry:8',
+          'classDef surface fill:' + palette.surfaceFill + ',stroke:' + palette.surfaceStroke + ',color:' + palette.surfaceText + ',stroke-width:2px,rx:8,ry:8',
+          'classDef agent fill:' + palette.agentFill + ',stroke:' + palette.agentStroke + ',color:' + palette.agentText + ',stroke-width:3px,rx:8,ry:8',
+          'classDef specialist fill:' + palette.specialistFill + ',stroke:' + palette.specialistStroke + ',color:' + palette.specialistText + ',stroke-width:3px,rx:8,ry:8',
+          'classDef decision fill:' + palette.decisionFill + ',stroke:' + palette.decisionStroke + ',color:' + palette.decisionText + ',stroke-width:2px,rx:8,ry:8',
+          'classDef db fill:' + palette.dbFill + ',stroke:' + palette.dbStroke + ',color:' + palette.dbText + ',stroke-width:2px,rx:8,ry:8',
+          'classDef output fill:' + palette.outFill + ',stroke:' + palette.outStroke + ',color:' + palette.outText + ',stroke-width:2px,rx:8,ry:8',
+          'classDef process fill:' + palette.logicFill + ',stroke:' + palette.logicStroke + ',color:' + palette.logicText + ',stroke-width:1px,rx:8,ry:8',
+          'REQUEST([fa:fa-comments Investigation request]):::user --> ORCH',
+          'subgraph CORE_AGENTS["fa:fa-robot Core AI agents"]',
+          'direction TB',
+          'ORCH[fa:fa-sitemap Case orchestration]:::agent',
+          'RETRIEVE[fa:fa-toolbox Retrieval and context]:::agent',
+          'SYNTH[fa:fa-align-left Evidence-backed synthesis]:::agent',
+          'VERIFY[fa:fa-shield-halved Verification]:::agent',
+          'end',
+          'ORCH --> CONTEXT[(fa:fa-database Investigation context)]:::db',
+          'CONTEXT --> RETRIEVE',
+          'RETRIEVE --> SYNTH',
+          'subgraph SUBAGENTS["fa:fa-users Specialist subagents"]',
+          'direction TB',
+          'TIME[fa:fa-clock Timeline]:::specialist',
+          'CORR[fa:fa-link Correlation]:::specialist',
+          'COMP[fa:fa-code-compare Comparison]:::specialist',
+          'TREND[fa:fa-chart-line Trend]:::specialist',
+          'end',
+          'ORCH -. deeper questions .-> TIME',
+          'ORCH -. deeper questions .-> CORR',
+          'ORCH -. deeper questions .-> COMP',
+          'ORCH -. deeper questions .-> TREND',
+          'TIME --> INSIGHTS[fa:fa-layer-group Specialist insights]:::process',
+          'CORR --> INSIGHTS',
+          'COMP --> INSIGHTS',
+          'TREND --> INSIGHTS',
+          'INSIGHTS --> SYNTH',
+          'RETRIEVE -. external context .-> ENRICH[fa:fa-globe External context]:::process',
+          'ENRICH -. added context .-> SYNTH',
+          'SYNTH --> VERIFY',
+          'VERIFY --> ANSWER([fa:fa-square-check Grounded answers]):::output',
+          'REPORTING([fa:fa-book Reporting]):::surface -. shared core .-> ORCH',
+          'MONITOR([fa:fa-triangle-exclamation Monitoring]):::surface -. shared core .-> ORCH',
+          'style CORE_AGENTS fill:' + palette.agentClusterBg + ',stroke:' + palette.agentClusterBorder + ',stroke-width:2px',
+          'style SUBAGENTS fill:' + palette.specialistClusterBg + ',stroke:' + palette.specialistClusterBorder + ',stroke-width:2px'
+        ].join('\n');
+      }
+
+      async function renderDiagram(container, palette) {
+        var direction = getDiagramDirection(container);
+        var target = container.querySelector('.mermaid-diagram');
+        var source = container.dataset.diagram === 'pipeline'
+          ? buildPipelineDiagram(direction, palette)
+          : buildInvestigatorDiagram(direction, palette);
+
+        syncDiagramControls(container);
+
+        if (!target) {
+          return;
+        }
+
+        renderSequence += 1;
+        var rendered = await mermaid.render(target.id + '-svg-' + renderSequence, source);
+        target.innerHTML = rendered.svg;
+      }
+
+      async function renderDiagrams() {
+        var palette = getThemePalette();
+        var containers = document.querySelectorAll('.mermaid-container');
+        for (var i = 0; i < containers.length; i += 1) {
+          await renderDiagram(containers[i], palette);
+        }
+      }
+
+      function toggleDiagram(container) {
+        if (!container) {
+          return;
+        }
+
+        var next = getDiagramDirection(container) === 'TB' ? 'LR' : 'TB';
+        container.dataset.userLayout = next;
+        container.dataset.layout = next;
+        renderDiagram(container, getThemePalette());
+      }
+
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest('.diagram-layout-toggle');
+        if (button) {
+          toggleDiagram(button.closest('.mermaid-container'));
+          return;
+        }
+
+        var interactive = event.target.closest('.diagram-interactive');
+        if (interactive) {
+          toggleDiagram(interactive.closest('.mermaid-container'));
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        var interactive = event.target.closest('.diagram-interactive');
+        if (!interactive) {
+          return;
+        }
+
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleDiagram(interactive.closest('.mermaid-container'));
+        }
+      });
+
+      window.addEventListener('themechange', renderDiagrams);
+      document.addEventListener('DOMContentLoaded', renderDiagrams);
+
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderDiagrams, 200);
+      });
+    }());
+  </script>
+</body>
+</html>
