@@ -13,95 +13,107 @@
   <meta property="og:description" content="Production AI architectures for cyber threat intelligence: schema-first pipelines and evidence-backed agentic investigation." />
   <meta property="og:url" content="https://mickaelsoussan.com/systems/" />
   <meta property="og:site_name" content="Mickael Soussan" />
+  <meta property="og:image" content="https://mickaelsoussan.com/assets/og.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mickael Soussan — Principal AI &amp; Cybersecurity Architect" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Systems — Mickael Soussan" />
   <meta name="twitter:description" content="Production AI architectures for cyber threat intelligence." />
+  <meta name="twitter:image" content="https://mickaelsoussan.com/assets/og.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- FontAwesome for sexy diagram icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/assets/styles.css" />
   <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 </head>
 <body>
 
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Primary">
     <div class="nav-content">
       <div class="brand">
-        <span class="brand-dot"></span>
+        <span class="brand-dot" aria-hidden="true"></span>
         <span class="brand-name">Mickael Soussan</span>
       </div>
       <div class="nav-links">
         <a href="/">Overview</a>
-        <a href="/systems" class="active">Systems</a>
+        <a href="/systems" class="active" aria-current="page">Systems</a>
         <a href="/cv">Experience</a>
         <a href="/contact" class="nav-cta">Contact</a>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+        <button type="button" class="theme-toggle" aria-label="Toggle theme" aria-pressed="true">
+          <svg class="theme-toggle-sun"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="theme-toggle-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        </button>
       </div>
     </div>
   </nav>
 
   <main class="container">
 
-    <header class="hero">
-      <div class="status-badge">
-        <span class="pulse-dot"></span>
-        Deep Dive: Production Architectures
-      </div>
-      <h1>System <span class="text-gradient">Case Studies</span></h1>
+    <header class="hero hero--page">
+      <span class="mono-label">CASE STUDIES</span>
+      <h1>Production systems.</h1>
       <p class="hero-subtext">
-        Production AI systems that turn noisy external reporting into structured intelligence and evidence-backed workflows for analysts and decision-makers.
+        End-to-end AI architectures for cyber threat intelligence — schema-first pipelines and evidence-backed agentic investigation.
       </p>
     </header>
+
+    <nav class="systems-index" aria-label="Case studies on this page">
+      <a class="systems-index__item" href="#system-01">
+        <span class="mono-label">CASE STUDY 01</span>
+        <span class="systems-index__title">AI-First CTI Pipeline</span>
+        <span class="systems-index__stamp">Pipeline architecture</span>
+      </a>
+      <a class="systems-index__item" href="#system-02">
+        <span class="mono-label">CASE STUDY 02</span>
+        <span class="systems-index__title">Agentic CTI Investigator</span>
+        <span class="systems-index__stamp">Agentic investigation</span>
+      </a>
+    </nav>
 
     <!-- ════════════════════════════════════════════════════ -->
     <!-- SYSTEM 01: AI-FIRST CTI PIPELINE                    -->
     <!-- ════════════════════════════════════════════════════ -->
     <article id="system-01" class="case-study-section">
       <div class="card">
-        <div class="case-study-header">
-          <div class="header-main">
-            <span class="mono-label">CASE_STUDY_01</span>
-            <h2>AI-First Cyber Threat Intelligence Pipeline</h2>
-          </div>
-          <div class="header-action">
-            <a href="/contact" class="btn btn-secondary">Discuss Design</a>
-          </div>
-        </div>
+        <header class="case-study-header">
+          <span class="mono-label">CASE STUDY 01</span>
+          <h2>AI-First Cyber Threat Intelligence Pipeline</h2>
+        </header>
 
-        <div class="impact-stats impact-stats--six">
-          <div class="stat-card">
-            <span class="stat-number">State machine</span>
-            <span class="stat-label">Per-Item Pipeline</span>
-            <span class="stat-description">Each article walks an explicit sequence of states — fetched, titled, classified, sourced, enriched, vetted, stored — observable end-to-end.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Schema-first</span>
-            <span class="stat-label">Entity Extraction</span>
-            <span class="stat-description">Actors, malware, CVEs, indicators, MITRE ATT&CK and victimology come out as typed JSON, not paragraphs.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Story-aware</span>
-            <span class="stat-label">Clustering &amp; Temporal Links</span>
-            <span class="stat-description">Daily clusters, cross-day similarity links and multi-day super-clusters reconstruct evolving narratives.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">LLM-adjudicated</span>
-            <span class="stat-label">Gray-Zone Decisions</span>
-            <span class="stat-description">An adjudicator agent breaks the tie between “duplicate” and “ongoing story” when deterministic similarity is ambiguous.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">7-signal</span>
-            <span class="stat-label">Importance Scoring</span>
-            <span class="stat-description">Source diversity, size, CVE/actor/IOC density, temporal persistence and content category combine into a single 0–100 score — no extra API calls.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Operable</span>
-            <span class="stat-label">Production Surface</span>
-            <span class="stat-description">Cost tracking per call, structured run/step logs, manual reprocess path, and dashboards built around the same data model.</span>
-          </div>
-        </div>
+        <section class="facets" aria-label="At a glance">
+          <article class="facet">
+            <span class="mono-label">PER-ITEM PIPELINE</span>
+            <h3 class="facet__title">State machine</h3>
+            <p class="facet__desc">Each article walks an explicit sequence of states — fetched, titled, classified, sourced, enriched, vetted, stored — observable end-to-end.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">ENTITY EXTRACTION</span>
+            <h3 class="facet__title">Schema-first</h3>
+            <p class="facet__desc">Actors, malware, CVEs, indicators, MITRE ATT&amp;CK and victimology come out as typed JSON, not paragraphs.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">CLUSTERING &amp; TEMPORAL LINKS</span>
+            <h3 class="facet__title">Story-aware</h3>
+            <p class="facet__desc">Daily clusters, cross-day similarity links, and multi-day super-clusters reconstruct evolving narratives.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">GRAY-ZONE DECISIONS</span>
+            <h3 class="facet__title">LLM-adjudicated</h3>
+            <p class="facet__desc">An adjudicator agent breaks the tie between "duplicate" and "ongoing story" when deterministic similarity is ambiguous.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">IMPORTANCE SCORING</span>
+            <h3 class="facet__title">7-signal</h3>
+            <p class="facet__desc">Source diversity, size, CVE/actor/IOC density, temporal persistence and content category combine into a single 0–100 score — no extra API calls.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">PRODUCTION SURFACE</span>
+            <h3 class="facet__title">Operable</h3>
+            <p class="facet__desc">Cost tracking per call, structured run/step logs, manual reprocess path, and dashboards built around the same data model.</p>
+          </article>
+        </section>
 
         <div class="solution-prose">
           <h3>Problem</h3>
@@ -129,7 +141,7 @@
         <!-- MERMAID DIAGRAM: SYSTEM 01 -->
         <div class="mermaid-container" data-diagram="pipeline" data-layout="LR">
           <div class="diagram-header">
-            <span class="mono-label diagram-title"><i class="fa-solid fa-diagram-project"></i> Pipeline Architecture</span>
+            <span class="mono-label diagram-title">Pipeline architecture</span>
             <button type="button" class="diagram-layout-toggle" aria-controls="diagram-pipeline" aria-pressed="false">Switch to top-down view</button>
           </div>
           <div class="diagram-legend" aria-hidden="true">
@@ -139,7 +151,7 @@
             <span class="legend-chip legend-chip-data">Data / infrastructure</span>
           </div>
           <p class="diagram-layout-hint">Default is left-to-right. Click the diagram or use the toggle to switch views.</p>
-          <div class="diagram-interactive" role="button" tabindex="0" aria-controls="diagram-pipeline" aria-label="Switch pipeline architecture diagram to top-down view">
+          <div class="diagram-interactive">
             <div class="mermaid-diagram" id="diagram-pipeline" role="img" aria-label="AI-first cyber threat intelligence pipeline architecture diagram"></div>
           </div>
         </div>
@@ -167,48 +179,43 @@
     <!-- ════════════════════════════════════════════════════ -->
     <article id="system-02" class="case-study-section">
       <div class="card">
-        <div class="case-study-header">
-          <div class="header-main">
-            <span class="mono-label">CASE_STUDY_02</span>
-            <h2>Agentic CTI Investigator</h2>
-          </div>
-          <div class="header-action">
-            <a href="/contact" class="btn btn-secondary">Discuss Design</a>
-          </div>
-        </div>
+        <header class="case-study-header">
+          <span class="mono-label">CASE STUDY 02</span>
+          <h2>Agentic CTI Investigator</h2>
+        </header>
 
-        <div class="impact-stats impact-stats--six">
-          <div class="stat-card">
-            <span class="stat-number">Reasoning router</span>
-            <span class="stat-label">One Plan, Many Steps</span>
-            <span class="stat-description">A single planner agent emits a typed execution plan — intents, scope, formatter, and a step DAG — replacing brittle classify-then-dispatch.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Parallel</span>
-            <span class="stat-label">Step Graph Execution</span>
-            <span class="stat-description">Independent steps (SQL, indicator lookups, vulnerability enrichment, MCP tools) run concurrently; dependencies are respected by topological layering.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Declarative</span>
-            <span class="stat-label">Skill Packs</span>
-            <span class="stat-description">Recurring investigation patterns are captured as YAML packs — triggers, slots, tool strategy, evidence contract, output template, validation rules — used as one source of truth across planner, retrieval, formatter, and verifier.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Layered</span>
-            <span class="stat-label">Verification</span>
-            <span class="stat-description">Plan-faithfulness, skill-contract, tool-strategy and evidence cross-checks run after every answer; below-confidence cases fall back gracefully.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Grounded</span>
-            <span class="stat-label">Evidence-Backed Output</span>
-            <span class="stat-description">Every answer carries the rows and tools that produced it; CVE-bearing answers are merged with authoritative vulnerability data before delivery.</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">Plan-keyed</span>
-            <span class="stat-label">Caching</span>
-            <span class="stat-description">Cache signatures derive from the plan, not the raw question — repeat investigations reuse work safely without leaking across scopes.</span>
-          </div>
-        </div>
+        <section class="facets" aria-label="At a glance">
+          <article class="facet">
+            <span class="mono-label">ONE PLAN, MANY STEPS</span>
+            <h3 class="facet__title">Reasoning router</h3>
+            <p class="facet__desc">A single planner agent emits a typed execution plan — intents, scope, formatter, and a step DAG — replacing brittle classify-then-dispatch.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">STEP GRAPH EXECUTION</span>
+            <h3 class="facet__title">Parallel</h3>
+            <p class="facet__desc">Independent steps (SQL, indicator lookups, vulnerability enrichment, MCP tools) run concurrently; dependencies are respected by topological layering.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">SKILL PACKS</span>
+            <h3 class="facet__title">Declarative</h3>
+            <p class="facet__desc">Recurring investigation patterns are captured as YAML packs — triggers, slots, tool strategy, evidence contract, output template, validation rules — used as one source of truth across planner, retrieval, formatter, and verifier.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">VERIFICATION</span>
+            <h3 class="facet__title">Layered</h3>
+            <p class="facet__desc">Plan-faithfulness, skill-contract, tool-strategy and evidence cross-checks run after every answer; below-confidence cases fall back gracefully.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">EVIDENCE-BACKED OUTPUT</span>
+            <h3 class="facet__title">Grounded</h3>
+            <p class="facet__desc">Every answer carries the rows and tools that produced it; CVE-bearing answers are merged with authoritative vulnerability data before delivery.</p>
+          </article>
+          <article class="facet">
+            <span class="mono-label">CACHING</span>
+            <h3 class="facet__title">Plan-keyed</h3>
+            <p class="facet__desc">Cache signatures derive from the plan, not the raw question — repeat investigations reuse work safely without leaking across scopes.</p>
+          </article>
+        </section>
 
         <div class="solution-prose">
           <h3>Problem</h3>
@@ -234,10 +241,10 @@
 
         </div>
 
-        <!-- MERMAID DIAGRAM: SYSTEM 03 -->
+        <!-- MERMAID DIAGRAM: SYSTEM 02 -->
         <div class="mermaid-container" data-diagram="investigator" data-layout="LR">
           <div class="diagram-header">
-            <span class="mono-label diagram-title"><i class="fa-solid fa-network-wired"></i> Investigation Architecture</span>
+            <span class="mono-label diagram-title">Investigation architecture</span>
             <button type="button" class="diagram-layout-toggle" aria-controls="diagram-investigator" aria-pressed="false">Switch to top-down view</button>
           </div>
           <div class="diagram-legend" aria-hidden="true">
@@ -249,7 +256,7 @@
             <span class="legend-chip legend-chip-data">Data / infrastructure</span>
           </div>
           <p class="diagram-layout-hint">Default is left-to-right. Click the diagram or use the toggle to switch views.</p>
-          <div class="diagram-interactive" role="button" tabindex="0" aria-controls="diagram-investigator" aria-label="Switch investigation architecture diagram to top-down view">
+          <div class="diagram-interactive">
             <div class="mermaid-diagram" id="diagram-investigator" role="img" aria-label="Agentic CTI investigator architecture diagram"></div>
           </div>
         </div>
@@ -267,70 +274,83 @@
       </div>
     </article>
 
-    <!-- Divider note: additional case studies in preparation -->
-    <section class="case-study-note">
-      <p class="mono-label">More case studies in preparation.</p>
-    </section>
-
-    <footer class="main-footer">
-      <div class="footer-left">&copy; 2026 Mickael Soussan</div>
-      <div class="footer-right">
-        <a href="#top" class="mono-label">BACK_TO_TOP ↑</a>
+    <footer class="site-footer">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <span class="brand">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <span class="brand-name">Mickael Soussan</span>
+          </span>
+          <span class="site-footer__role">Principal AI &amp; Cybersecurity Architect</span>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <a href="/">Overview</a>
+          <a href="/systems">Systems</a>
+          <a href="/cv">Experience</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div class="site-footer__social">
+          <a href="https://github.com/msoussan/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mickael-soussan-09635885/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.222 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="site-footer__meta">
+        <span>&copy; <span data-current-year>2026</span> Mickael Soussan</span>
+        <span class="site-footer__meta-dot" aria-hidden="true">·</span>
+        <span>Built without trackers</span>
       </div>
     </footer>
   </main>
   
   <script src="/assets/theme.js"></script>
-  <!-- Initialize Mermaid.js -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <!-- Mermaid diagrams (lazy-loaded on first viewport intersection) -->
   <script>
-    mermaid.initialize({
-      startOnLoad: false,
-      securityLevel: 'loose',
-      fontFamily: 'Inter, sans-serif'
-    });
-
     (function () {
+      var mermaidLoaded = false;
+      var mermaidLoading = null;
       var renderSequence = 0;
 
-      function getDiagramName(container) {
-        return container.dataset.diagram === 'pipeline'
-          ? 'pipeline architecture'
-          : 'investigation architecture';
+      function loadMermaid() {
+        if (mermaidLoaded) return Promise.resolve(window.mermaid);
+        if (mermaidLoading) return mermaidLoading;
+        mermaidLoading = new Promise(function (resolve, reject) {
+          var s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+          s.async = true;
+          s.onload = function () {
+            window.mermaid.initialize({
+              startOnLoad: false,
+              securityLevel: 'loose',
+              fontFamily: 'Inter, sans-serif'
+            });
+            mermaidLoaded = true;
+            resolve(window.mermaid);
+          };
+          s.onerror = function () { reject(new Error('Failed to load Mermaid')); };
+          document.head.appendChild(s);
+        });
+        return mermaidLoading;
       }
 
       function getDiagramDirection(container) {
         var explicit = container.dataset.userLayout;
-        if (explicit === 'TB' || explicit === 'LR') {
-          return explicit;
-        }
+        if (explicit === 'TB' || explicit === 'LR') return explicit;
         var isNarrow = window.matchMedia('(max-width: 720px)').matches;
-        if (isNarrow) {
-          return 'TB';
-        }
+        if (isNarrow) return 'TB';
         return container.dataset.layout === 'TB' ? 'TB' : 'LR';
       }
 
       function syncDiagramControls(container) {
         var isTopDown = getDiagramDirection(container) === 'TB';
         var button = container.querySelector('.diagram-layout-toggle');
-        var interactive = container.querySelector('.diagram-interactive');
-        var diagramName = getDiagramName(container);
-
         container.classList.toggle('is-top-down', isTopDown);
-
         if (button) {
           button.textContent = isTopDown ? 'Switch to left-right view' : 'Switch to top-down view';
           button.setAttribute('aria-pressed', String(isTopDown));
-        }
-
-        if (interactive) {
-          interactive.setAttribute(
-            'aria-label',
-            isTopDown
-              ? 'Switch ' + diagramName + ' diagram to left-to-right view'
-              : 'Switch ' + diagramName + ' diagram to top-down view'
-          );
         }
       }
 
@@ -463,39 +483,39 @@
           'classDef db fill:' + palette.dbFill + ',stroke:' + palette.dbStroke + ',color:' + palette.dbText + ',stroke-width:2px,rx:8,ry:8',
           'classDef out fill:' + palette.outFill + ',stroke:' + palette.outStroke + ',color:' + palette.outText + ',stroke-width:2px,rx:8,ry:8',
 
-          'subgraph Sources["fa:fa-download External sources"]',
+          'subgraph Sources["External sources"]',
           'direction TB',
-          'REPORTING([fa:fa-rss Vendor reporting<br>and intel feeds]):::source',
-          'ADVISORIES([fa:fa-shield Advisories<br>and bulletins]):::source',
+          'REPORTING([Vendor reporting<br>and intel feeds]):::source',
+          'ADVISORIES([Advisories<br>and bulletins]):::source',
           'end',
 
-          'subgraph PerItem["fa:fa-list-check Per-item state machine"]',
+          'subgraph PerItem["Per-item state machine"]',
           'direction TB',
-          'INTAKE[fa:fa-layer-group Fetch and<br>register]:::logic',
-          'TITLE[fa:fa-pen-nib AI title<br>rewrite]:::agent',
-          'RELEVANCE[fa:fa-filter AI relevance<br>filter]:::agent',
-          'SOURCE[fa:fa-route Original-source<br>resolution]:::agent',
-          'ENRICH[fa:fa-cube Schema-first<br>enrichment]:::agent',
-          'VET[fa:fa-circle-check Secondary<br>vetting]:::agent',
-          'STORE[fa:fa-database-floppy Persist<br>typed entry]:::logic',
+          'INTAKE[Fetch and<br>register]:::logic',
+          'TITLE[AI title<br>rewrite]:::agent',
+          'RELEVANCE[AI relevance<br>filter]:::agent',
+          'SOURCE[Original-source<br>resolution]:::agent',
+          'ENRICH[Schema-first<br>enrichment]:::agent',
+          'VET[Secondary<br>vetting]:::agent',
+          'STORE[Persist<br>typed entry]:::logic',
           'INTAKE --> TITLE --> RELEVANCE --> SOURCE --> ENRICH --> VET --> STORE',
           'end',
 
-          'subgraph Post["fa:fa-arrows-spin Nightly post-processing"]',
+          'subgraph Post["Nightly post-processing"]',
           'direction TB',
-          'NORM[fa:fa-broom Entity<br>normalization]:::logic',
-          'CLUSTER[fa:fa-diagram-project Daily clustering<br>+ embeddings]:::logic',
-          'TLINK[fa:fa-link Temporal links<br>+ super-clusters]:::logic',
-          'ADJ[fa:fa-gavel LLM adjudicator<br>duplicate vs ongoing]:::specialist',
-          'SCORE[fa:fa-ranking-star 7-signal<br>importance score]:::logic',
+          'NORM[Entity<br>normalization]:::logic',
+          'CLUSTER[Daily clustering<br>+ embeddings]:::logic',
+          'TLINK[Temporal links<br>+ super-clusters]:::logic',
+          'ADJ[LLM adjudicator<br>duplicate vs ongoing]:::specialist',
+          'SCORE[7-signal<br>importance score]:::logic',
           'NORM --> CLUSTER --> TLINK --> ADJ --> SCORE',
           'end',
 
-          'subgraph Delivery["fa:fa-cloud Analyst delivery"]',
+          'subgraph Delivery["Analyst delivery"]',
           'direction TB',
-          'CENTRAL[(fa:fa-database Central intelligence<br>store)]:::db',
-          'DASH[[fa:fa-chart-line Analyst dashboard<br>+ story drilldown]]:::out',
-          'EXPORTS[[fa:fa-share-from-square IOC / CVE / brief<br>exports]]:::out',
+          'CENTRAL[(Central intelligence<br>store)]:::db',
+          'DASH[[Analyst dashboard<br>+ story drilldown]]:::out',
+          'EXPORTS[[IOC / CVE / brief<br>exports]]:::out',
           'CENTRAL --> DASH',
           'CENTRAL --> EXPORTS',
           'end',
@@ -525,12 +545,12 @@
           'classDef output fill:' + palette.outFill + ',stroke:' + palette.outStroke + ',color:' + palette.outText + ',stroke-width:2px,rx:8,ry:8',
           'classDef process fill:' + palette.logicFill + ',stroke:' + palette.logicStroke + ',color:' + palette.logicText + ',stroke-width:1px,rx:8,ry:8',
 
-          'REQUEST([fa:fa-comments Investigation request]):::user --> SKILLR',
+          'REQUEST([Investigation request]):::user --> SKILLR',
 
-          'subgraph Skills["fa:fa-layer-group Declarative skills layer"]',
+          'subgraph Skills["Declarative skills layer"]',
           'direction TB',
-          'SKILLR[fa:fa-compass Skill router]:::skill',
-          'PACK[fa:fa-scroll Skill pack<br>triggers · slots ·<br>tool strategy ·<br>evidence contract ·<br>output template ·<br>validation rules]:::skill',
+          'SKILLR[Skill router]:::skill',
+          'PACK[Skill pack<br>triggers · slots ·<br>tool strategy ·<br>evidence contract ·<br>output template ·<br>validation rules]:::skill',
           'SKILLR -- "confidence ≥ threshold" --> PACK',
           'end',
 
@@ -538,10 +558,10 @@
           'SKILLR --> GATE',
           'PACK --> GATE',
 
-          'subgraph Reasoning["fa:fa-robot Reasoning router"]',
+          'subgraph Reasoning["Reasoning router"]',
           'direction TB',
-          'ROUTER[fa:fa-brain Planner agent<br>schema-aware]:::agent',
-          'PLAN[(fa:fa-diagram-project Execution plan<br>intents · scope ·<br>step DAG · formatter ·<br>cache signature)]:::plan',
+          'ROUTER[Planner agent<br>schema-aware]:::agent',
+          'PLAN[(Execution plan<br>intents · scope ·<br>step DAG · formatter ·<br>cache signature)]:::plan',
           'ROUTER --> PLAN',
           'end',
 
@@ -550,14 +570,14 @@
 
           'PLAN --> RUNNER',
 
-          'subgraph Steps["fa:fa-network-wired Parallel step graph"]',
+          'subgraph Steps["Parallel step graph"]',
           'direction TB',
-          'RUNNER[fa:fa-bolt Plan runner<br>topo-sorted layers]:::agent',
-          'S_SQL[fa:fa-table SQL expert]:::agent',
-          'S_CTI[fa:fa-file-lines CTI templates]:::process',
-          'S_TOOL[fa:fa-plug MCP tools]:::process',
-          'S_KEV[fa:fa-shield-virus KEV lookup]:::process',
-          'S_NVD[fa:fa-bug NVD enrichment]:::process',
+          'RUNNER[Plan runner<br>topo-sorted layers]:::agent',
+          'S_SQL[SQL expert]:::agent',
+          'S_CTI[CTI templates]:::process',
+          'S_TOOL[MCP tools]:::process',
+          'S_KEV[KEV lookup]:::process',
+          'S_NVD[NVD enrichment]:::process',
           'RUNNER --> S_SQL',
           'RUNNER --> S_CTI',
           'RUNNER --> S_TOOL',
@@ -565,12 +585,12 @@
           'RUNNER --> S_NVD',
           'end',
 
-          'subgraph Specialists["fa:fa-users Specialist subagents"]',
+          'subgraph Specialists["Specialist subagents"]',
           'direction TB',
-          'TIME[fa:fa-clock Timeline]:::specialist',
-          'CORR[fa:fa-link Correlation]:::specialist',
-          'COMP[fa:fa-code-compare Comparison]:::specialist',
-          'TREND[fa:fa-chart-line Trend]:::specialist',
+          'TIME[Timeline]:::specialist',
+          'CORR[Correlation]:::specialist',
+          'COMP[Comparison]:::specialist',
+          'TREND[Trend]:::specialist',
           'end',
 
           'S_SQL --> MERGE',
@@ -578,7 +598,7 @@
           'S_TOOL --> MERGE',
           'S_KEV --> MERGE',
           'S_NVD --> MERGE',
-          'MERGE[fa:fa-object-group Merge step results]:::process',
+          'MERGE[Merge step results]:::process',
           'MERGE -. "if plan needs specialists" .-> TIME',
           'MERGE -. "if plan needs specialists" .-> CORR',
           'MERGE -. "if plan needs specialists" .-> COMP',
@@ -589,19 +609,19 @@
           'TREND --> FORMAT',
           'MERGE --> FORMAT',
 
-          'FORMAT[fa:fa-align-left Formatter agent<br>+ skill output template]:::agent',
+          'FORMAT[Formatter agent<br>+ skill output template]:::agent',
           'FORMAT --> VERIFY',
-          'VERIFY[fa:fa-shield-halved Verifier agent<br>plan-faithfulness ·<br>skill contract ·<br>tool strategy ·<br>evidence cross-check]:::agent',
+          'VERIFY[Verifier agent<br>plan-faithfulness ·<br>skill contract ·<br>tool strategy ·<br>evidence cross-check]:::agent',
           'VERIFY -. "revise" .-> RUNNER',
           'VERIFY --> SYNTH{CVE detected?}:::decision',
-          'SYNTH -- "yes" --> SYNTHA[fa:fa-flask Synthesizer<br>NVD merge]:::agent',
+          'SYNTH -- "yes" --> SYNTHA[Synthesizer<br>NVD merge]:::agent',
           'SYNTH -- "no" --> CACHE',
           'SYNTHA --> CACHE',
-          'CACHE[(fa:fa-database Plan-keyed cache)]:::db',
-          'CACHE --> ANSWER([fa:fa-square-check Grounded answer]):::output',
+          'CACHE[(Plan-keyed cache)]:::db',
+          'CACHE --> ANSWER([Grounded answer]):::output',
 
-          'REPORTING([fa:fa-book Reporting]):::surface -. "shared core" .-> SKILLR',
-          'MONITOR([fa:fa-triangle-exclamation Proactive monitoring]):::surface -. "shared core" .-> SKILLR',
+          'REPORTING([Reporting]):::surface -. "shared core" .-> SKILLR',
+          'MONITOR([Proactive monitoring]):::surface -. "shared core" .-> SKILLR',
 
           'style Skills fill:' + palette.skillClusterBg + ',stroke:' + palette.skillClusterBorder + ',stroke-width:2px',
           'style Reasoning fill:' + palette.agentClusterBg + ',stroke:' + palette.agentClusterBorder + ',stroke-width:2px',
@@ -628,7 +648,8 @@
         target.innerHTML = rendered.svg;
       }
 
-      async function renderDiagrams() {
+      async function renderAll() {
+        await loadMermaid();
         var palette = getThemePalette();
         var containers = document.querySelectorAll('.mermaid-container');
         for (var i = 0; i < containers.length; i += 1) {
@@ -637,14 +658,33 @@
       }
 
       function toggleDiagram(container) {
-        if (!container) {
-          return;
-        }
-
+        if (!container) return;
         var next = getDiagramDirection(container) === 'TB' ? 'LR' : 'TB';
         container.dataset.userLayout = next;
         container.dataset.layout = next;
-        renderDiagram(container, getThemePalette());
+        loadMermaid().then(function () {
+          renderDiagram(container, getThemePalette());
+        });
+      }
+
+      // Lazy-load: fire renderAll() the first time any .mermaid-container
+      // crosses (or nears) the viewport. Falls back to DOMContentLoaded
+      // on browsers without IntersectionObserver.
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i += 1) {
+            if (entries[i].isIntersecting) {
+              renderAll();
+              io.disconnect();
+              return;
+            }
+          }
+        }, { rootMargin: '300px' });
+        document.querySelectorAll('.mermaid-container').forEach(function (c) {
+          io.observe(c);
+        });
+      } else {
+        document.addEventListener('DOMContentLoaded', renderAll);
       }
 
       document.addEventListener('click', function (event) {
@@ -653,32 +693,22 @@
           toggleDiagram(button.closest('.mermaid-container'));
           return;
         }
-
         var interactive = event.target.closest('.diagram-interactive');
         if (interactive) {
           toggleDiagram(interactive.closest('.mermaid-container'));
         }
       });
 
-      document.addEventListener('keydown', function (event) {
-        var interactive = event.target.closest('.diagram-interactive');
-        if (!interactive) {
-          return;
-        }
-
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          toggleDiagram(interactive.closest('.mermaid-container'));
-        }
+      window.addEventListener('themechange', function () {
+        if (mermaidLoaded) renderAll();
       });
-
-      window.addEventListener('themechange', renderDiagrams);
-      document.addEventListener('DOMContentLoaded', renderDiagrams);
 
       var resizeTimer;
       window.addEventListener('resize', function () {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(renderDiagrams, 200);
+        resizeTimer = setTimeout(function () {
+          if (mermaidLoaded) renderAll();
+        }, 200);
       });
     }());
   </script>

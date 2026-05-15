@@ -1,1 +1,48 @@
+# Claude Code — local AI tooling state, not shipped to GitHub Pages
+CLAUDE.md
+.claude/
+
+# GitHub-side tooling instructions kept local to this repo
 .github/
+
+# OS noise
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE state
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.history/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment / secrets — should never be in a public Pages repo
+.env
+.env.*
+*.env
+*.pem
+*.key
+secrets/
+
+# Preempt build / cache outputs (no build tool today, but cheap insurance)
+node_modules/
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.next/
+.tmp/
+coverage/
