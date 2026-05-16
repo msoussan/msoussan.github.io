@@ -117,15 +117,15 @@
 
         <div class="solution-prose">
           <h3>Problem</h3>
-          <p>Cybersecurity teams operate on top of a constant stream of unstructured reporting — vendor blogs, advisories, news, and intel feeds. Raw data is noisy, duplicated, and inconsistent. Generic summarization loses the entities and relationships that make intelligence actionable, and naïve deduplication either fragments stories into isolated articles or collapses unrelated events into a single noisy bucket. Producing structured, reliable, queryable intelligence at scale takes more than summarization or deduplication.</p>
+          <p>Cybersecurity teams operate on top of a constant stream of unstructured reporting: vendor blogs, advisories, news, intel feeds. Raw data is noisy, duplicated, and inconsistent. Generic summarization loses the entities and relationships that make intelligence actionable, and naïve deduplication either fragments stories into isolated articles or collapses unrelated events into a single noisy bucket. Producing structured, reliable, queryable intelligence at scale takes more than summarization or deduplication.</p>
 
           <h3>Approach</h3>
-          <p>I designed an end-to-end system built around two explicit phases: a <strong>per-item state machine</strong> that walks each article through filtering, source resolution, schema-first enrichment and vetting; and a <strong>nightly post-processing chain</strong> that normalizes entities, rebuilds daily clusters, links them across time into multi-day stories, lets an LLM adjudicator settle gray-zone “duplicate vs ongoing” calls, scores everything by importance, and pushes the resulting intelligence into a central store and downstream sinks. Specialist responsibilities (title rewriting, relevance filtering, source resolution, structured extraction, secondary vetting) are kept as separate agents so each stays small, testable, and replaceable.</p>
+          <p>I designed an end-to-end system built around two explicit phases: a <strong>per-item state machine</strong> that walks each article through filtering, source resolution, schema-first enrichment and vetting; and a <strong>nightly post-processing chain</strong> that normalizes entities, rebuilds daily clusters, links them across time into multi-day stories, lets an LLM adjudicator settle gray-zone “duplicate vs ongoing” calls, scores everything by importance, and pushes the resulting intelligence into a central store and downstream sinks. I keep specialist responsibilities (title rewriting, relevance filtering, source resolution, structured extraction, secondary vetting) as separate agents so each stays small, testable, and replaceable.</p>
 
           <h3>Key Design Decisions</h3>
           <ul class="decision-list">
             <li><strong>Per-item state machine</strong> with persisted state transitions makes the pipeline resumable, auditable, and easy to re-drive on a single URL.</li>
-            <li><strong>Early relevance rejection</strong> happens before any expensive enrichment runs, keeping spend tied to articles that actually matter.</li>
+            <li><strong>Early relevance rejection</strong> happens before any expensive enrichment runs, keeping spend tied to articles that matter.</li>
             <li><strong>Schema-first enrichment</strong> emits typed entities (threat actors, malware, CVEs with CVSS, IOCs, MITRE ATT&CK, victimology) instead of free-form prose. Every downstream stage consumes structure.</li>
             <li><strong>Entity normalization</strong> applies curated alias mappings so the same actor, malware family, or product surfaces under one canonical name across sources.</li>
             <li><strong>Daily clustering + temporal links + super-clusters</strong> reconstruct multi-day campaigns instead of leaving analysts with isolated articles.</li>
@@ -193,33 +193,33 @@
           <article class="facet">
             <span class="mono-label">STEP GRAPH EXECUTION</span>
             <h3 class="facet__title">Parallel</h3>
-            <p class="facet__desc">Independent steps (SQL, indicator lookups, vulnerability enrichment, MCP tools) run concurrently; dependencies are respected by topological layering.</p>
+            <p class="facet__desc">Independent steps (SQL, indicator lookups, vulnerability enrichment, MCP tools) run concurrently; topological layering preserves dependencies.</p>
           </article>
           <article class="facet">
             <span class="mono-label">SKILL PACKS</span>
             <h3 class="facet__title">Declarative</h3>
-            <p class="facet__desc">Recurring investigation patterns are captured as YAML packs (triggers, slots, tool strategy, evidence contract, output template, validation rules) used as one source of truth across planner, retrieval, formatter, and verifier.</p>
+            <p class="facet__desc">YAML packs capture recurring investigation patterns (triggers, slots, tool strategy, evidence contract, output template, validation rules) as one source of truth for the planner, retrieval, formatter, and verifier.</p>
           </article>
           <article class="facet">
             <span class="mono-label">VERIFICATION</span>
             <h3 class="facet__title">Layered</h3>
-            <p class="facet__desc">Plan-faithfulness, skill-contract, tool-strategy and evidence cross-checks run after every answer; below-confidence cases fall back gracefully.</p>
+            <p class="facet__desc">Plan-faithfulness, skill-contract, tool-strategy and evidence cross-checks run after every answer; below-confidence cases fall back to plain reasoning.</p>
           </article>
           <article class="facet">
             <span class="mono-label">EVIDENCE-BACKED OUTPUT</span>
             <h3 class="facet__title">Grounded</h3>
-            <p class="facet__desc">Every answer carries the rows and tools that produced it; CVE-bearing answers are merged with authoritative vulnerability data before delivery.</p>
+            <p class="facet__desc">Every answer carries the rows and tools that produced it; a synthesizer merges CVE-bearing answers with authoritative vulnerability data before delivery.</p>
           </article>
           <article class="facet">
             <span class="mono-label">CACHING</span>
             <h3 class="facet__title">Plan-keyed</h3>
-            <p class="facet__desc">Cache signatures derive from the plan. Repeat investigations reuse work safely without leaking across scopes.</p>
+            <p class="facet__desc">Cache signatures derive from the plan, so repeat investigations reuse work without leaking across scopes.</p>
           </article>
         </section>
 
         <div class="solution-prose">
           <h3>Problem</h3>
-          <p>Analysts need an investigation system. Real CTI questions carry multiple intents at once (“the most exploited CVE <em>this year</em>” is both a ranking and a temporal scope), often need cross-referencing against external authoritative sources, and demand answers backed by traceable evidence. A single prompt, or a flat classify-then-dispatch table, cannot compose retrieval, specialist reasoning, and validation reliably under those conditions.</p>
+          <p>Analysts need an investigation system. Real CTI questions carry multiple intents at once (“the most exploited CVE <em>this year</em>” is both a ranking and a temporal scope), often need cross-referencing against external authoritative sources, and demand answers backed by traceable evidence. A single prompt, or a flat classify-then-dispatch table, cannot compose retrieval, specialist reasoning, and validation under those conditions.</p>
 
           <h3>Approach</h3>
           <p>I redesigned the orchestration around a <strong>reasoning router</strong>: one planner agent emits a structured <em>execution plan</em> with declared intents, entity scope, temporal scope, a DAG of steps, the formatter to use, and whether specialists are needed. A plan runner topologically sorts that DAG and runs independent steps in parallel. On top of the router sits a <strong>declarative skills layer</strong>: roughly 90% of recurring investigation patterns are captured as YAML packs (triggers, typed slots, tool strategy, evidence contract, output template, validation rules) that constrain every downstream stage from the same source of truth. Specialist subagents handle deeper timeline, correlation, comparison and trend reasoning when the plan calls for it; layered verification gates the final answer.</p>
@@ -227,12 +227,12 @@
           <h3>Key Design Decisions</h3>
           <ul class="decision-list">
             <li><strong>Plan, don’t classify:</strong> one planner agent emits a typed execution plan that decomposes multi-intent and time-scoped questions into structured steps.</li>
-            <li><strong>Parallel step DAG:</strong> independent retrievals and lookups run concurrently; dependencies are respected by topological layering, with per-step traces rolled up into the answer.</li>
-            <li><strong>Declarative skill packs:</strong> patterns like ranking aggregation, single-CVE deep-dive, threat-actor profile, daily briefing, IOC pivots are described once in YAML and applied consistently to planner, SQL expert, formatter and verifier.</li>
-            <li><strong>Skill router with confidence threshold:</strong> when nothing matches confidently, the system falls back to plain reasoning rather than forcing a misclassification.</li>
+            <li><strong>Parallel step DAG:</strong> independent retrievals and lookups run concurrently; topological layering preserves dependencies, and the runner rolls per-step traces up into the answer.</li>
+            <li><strong>Declarative skill packs:</strong> a YAML pack describes each recurring pattern (ranking aggregation, single-CVE deep-dive, threat-actor profile, daily briefing, IOC pivots) once, and the planner, SQL expert, formatter and verifier all read from it.</li>
+            <li><strong>Skill router with confidence threshold:</strong> when no skill clears the threshold, the system falls back to plain reasoning rather than forcing a misclassification.</li>
             <li><strong>Live schema awareness:</strong> the planner introspects the data model at request time via tool calls, so reasoning stays aligned with the current schema instead of a static prompt snapshot.</li>
-            <li><strong>Layered verification:</strong> plan-faithfulness, skill-contract coverage, tool-strategy enforcement, and deterministic evidence cross-checks combine before an answer is released; bounded revision loops re-run the offending steps when grounding slips.</li>
-            <li><strong>Plan-keyed caching:</strong> repeated investigations reuse work safely; cache signatures are derived from the plan.</li>
+            <li><strong>Layered verification:</strong> plan-faithfulness, skill-contract coverage, tool-strategy enforcement, and deterministic evidence cross-checks combine before the system releases an answer; bounded revision loops re-run the offending steps when grounding slips.</li>
+            <li><strong>Plan-keyed caching:</strong> the cache derives signatures from the plan, so repeated investigations reuse work without leaking across scopes.</li>
             <li><strong>Validation harness:</strong> a curated end-to-end suite gates every change to skills, prompts or verifier logic, asserting selected skill, answer substrings, and verifier status against a live container.</li>
           </ul>
 
