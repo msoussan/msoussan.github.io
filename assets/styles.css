@@ -3,8 +3,9 @@
    ============================= */
 :root {
   /* Fonts */
-  --font-main: 'Inter', -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-main:    'Inter', -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --font-display: 'Rajdhani', 'Inter', -apple-system, sans-serif;
 
   /* Type scale */
   --fs-display: clamp(2.5rem, 5.5vw, 4rem);
@@ -52,94 +53,94 @@
   --nav-height: 56px;
 }
 
-/* Dark theme (default) */
+/* Dark theme (default) — cyber palette: deep navy + electric blue */
 [data-theme="dark"] {
   /* Surfaces */
-  --bg:              #0d1117;
-  --bg-secondary:    #161b22;
-  --surface-1:       #161b22;
-  --surface-2:       #1c2128;
+  --bg:              #061A33;
+  --bg-secondary:    #071E3D;
+  --surface-1:       #0B253F;
+  --surface-2:       #102E4D;
   --card-bg:         var(--surface-1);
   --card-bg-hover:   var(--surface-2);
-  --card-border:     #30363d;
+  --card-border:     rgba(29, 124, 255, 0.18);
   --border:          var(--card-border);
 
-  /* Text — `muted` and `subtle` brightened to clear WCAG AA on surfaces. */
-  --text-main:   #e6edf3;
-  --text-muted:  #a3aebd;
-  --text-subtle: #8794a4;
+  /* Text — tuned for AA on deep-navy surfaces. */
+  --text-main:   #E6EEF7;
+  --text-muted:  #B4C2D5;
+  --text-subtle: #7E92AE;
 
-  /* Accent */
-  --accent:        #38bdf8;
-  --accent-strong: #0ea5e9;
-  --accent-soft:   rgba(56, 189, 248, 0.10);
-  --accent-ring:   rgba(56, 189, 248, 0.40);
+  /* Accent — soft cyan glow for inline links, electric blue for solids. */
+  --accent:        #4DB8FF;
+  --accent-strong: #1D7CFF;
+  --accent-soft:   rgba(29, 124, 255, 0.12);
+  --accent-ring:   rgba(77, 184, 255, 0.42);
 
   /* Nav */
-  --nav-bg:     rgba(13, 17, 23, 0.88);
-  --nav-border: rgba(48, 54, 61, 0.7);
+  --nav-bg:     rgba(6, 26, 51, 0.88);
+  --nav-border: rgba(29, 124, 255, 0.22);
 
   /* Buttons */
-  --btn-primary-bg: #38bdf8;
-  --btn-primary-fg: #0d1117;
+  --btn-primary-bg: #1D7CFF;
+  --btn-primary-fg: #FFFFFF;
 
   /* Tags */
-  --tag-bg:     rgba(56, 189, 248, 0.07);
-  --tag-border: rgba(56, 189, 248, 0.2);
-  --tag-fg:     #38bdf8;
+  --tag-bg:     rgba(29, 124, 255, 0.08);
+  --tag-border: rgba(29, 124, 255, 0.28);
+  --tag-fg:     #4DB8FF;
 
   /* Effects */
   --pulse-color:  var(--accent);
-  --shadow-1:     0 1px 3px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.25);
-  --shadow-2:     0 8px 24px rgba(0,0,0,0.40);
+  --shadow-1:     0 1px 3px rgba(0,0,0,0.45), 0 4px 12px rgba(0,0,0,0.28);
+  --shadow-2:     0 8px 24px rgba(0,0,0,0.45);
   --shadow-focus: 0 0 0 3px var(--accent-ring);
   --shadow-card:  var(--shadow-1);
-  --diagram-bg:   rgba(15, 23, 42, 0.6);
+  --diagram-bg:   rgba(11, 37, 63, 0.6);
 }
 
-/* Light theme */
+/* Light theme — cyber palette: off-white panels + deep-navy text + electric blue */
 [data-theme="light"] {
   /* Surfaces */
-  --bg:              #f8fafc;
-  --bg-secondary:    #f1f5f9;
-  --surface-1:       #ffffff;
-  --surface-2:       #f8fafc;
+  --bg:              #F7FAFD;
+  --bg-secondary:    #E6EEF7;
+  --surface-1:       #FFFFFF;
+  --surface-2:       #F7FAFD;
   --card-bg:         var(--surface-1);
   --card-bg-hover:   var(--surface-2);
-  --card-border:     #e2e8f0;
+  --card-border:     #D9E5F2;
   --border:          var(--card-border);
 
-  /* Text — `subtle` darkened to clear WCAG AA on white. */
-  --text-main:   #0f172a;
-  --text-muted:  #475569;
-  --text-subtle: #5c6b80;
+  /* Text — `subtle` is the AA floor on white. */
+  --text-main:   #061A33;
+  --text-muted:  #44546A;
+  --text-subtle: #5C6B80;
 
-  /* Accent */
-  --accent:        #0284c7;
-  --accent-strong: #0369a1;
-  --accent-soft:   #e0f2fe;
-  --accent-ring:   rgba(2, 132, 199, 0.30);
+  /* Accent — electric blue is the link/accent color, deeper variant for hover. */
+  --accent:        #1D7CFF;
+  --accent-strong: #1565CC;
+  --accent-soft:   rgba(29, 124, 255, 0.07);
+  --accent-ring:   rgba(29, 124, 255, 0.32);
 
   /* Nav */
-  --nav-bg:     rgba(248, 250, 252, 0.9);
-  --nav-border: rgba(226, 232, 240, 0.8);
+  --nav-bg:     rgba(247, 250, 253, 0.92);
+  --nav-border: rgba(217, 229, 242, 0.9);
 
-  /* Buttons */
-  --btn-primary-bg: #0f172a;
-  --btn-primary-fg: #ffffff;
+  /* Buttons — navy on white reads executive, matches /resume hero scheme. */
+  --btn-primary-bg: #061A33;
+  --btn-primary-fg: #FFFFFF;
 
   /* Tags */
-  --tag-bg:     #f0f9ff;
-  --tag-border: #bae6fd;
-  --tag-fg:     #0284c7;
+  --tag-bg:     #EEF5FF;
+  --tag-border: #BFDAFF;
+  --tag-fg:     #1D7CFF;
 
   /* Effects */
   --pulse-color:  var(--accent);
-  --shadow-1:     0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
-  --shadow-2:     0 12px 24px rgba(0,0,0,0.08);
+  --shadow-1:     0 1px 3px rgba(6, 26, 51, 0.06), 0 4px 12px rgba(6, 26, 51, 0.05);
+  --shadow-2:     0 12px 24px rgba(6, 26, 51, 0.08);
   --shadow-focus: 0 0 0 3px var(--accent-ring);
   --shadow-card:  var(--shadow-1);
-  --diagram-bg:   #f8fafc;
+  --diagram-bg:   #F7FAFD;
 }
 
 /* =============================
@@ -284,7 +285,7 @@ summary:focus-visible,
 }
 
 .nav-cta {
-  background: var(--accent) !important;
+  background: var(--btn-primary-bg) !important;
   color: var(--btn-primary-fg) !important;
   font-weight: 600 !important;
   padding: 6px 14px !important;
@@ -338,13 +339,14 @@ summary:focus-visible,
 }
 
 .hero h1 {
+  font-family: var(--font-display);
   font-size: var(--fs-display);
-  font-weight: 800;
-  letter-spacing: var(--tracking-display);
-  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.06;
   margin-bottom: var(--space-5);
   color: var(--text-main);
-  max-width: 20ch;
+  max-width: 22ch;
 }
 
 .hero-subtext {
@@ -381,13 +383,14 @@ summary:focus-visible,
 }
 
 .hero--page h1 {
+  font-family: var(--font-display);
   font-size: var(--fs-h1);
-  font-weight: 700;
-  letter-spacing: var(--tracking-heading);
+  font-weight: 600;
+  letter-spacing: -0.005em;
   line-height: var(--lh-tight);
   margin-bottom: var(--space-4);
   color: var(--text-main);
-  max-width: 18ch;
+  max-width: 20ch;
 }
 
 .hero--page .hero-subtext {
@@ -793,12 +796,12 @@ summary:focus-visible,
 }
 
 .legend-chip-agent {
-  border-color: rgba(56, 189, 248, 0.35);
-  background: rgba(56, 189, 248, 0.09);
+  border-color: rgba(29, 124, 255, 0.35);
+  background: rgba(29, 124, 255, 0.09);
 }
 
 .legend-chip-agent::before {
-  background: #0284c7;
+  background: #1D7CFF;
 }
 
 .legend-chip-specialist {

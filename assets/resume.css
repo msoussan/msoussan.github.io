@@ -1,0 +1,909 @@
+/* =====================================================================
+   RESUME PAGE — SCOPED CYBER AESTHETIC
+   Loaded only by /resume/index.html (in addition to the global
+   /assets/styles.css). All selectors are scoped under body.resume-page
+   so this stylesheet has no effect on the rest of the site.
+   The page is visually locked to a fixed navy/electric-blue scheme —
+   the global theme toggle is hidden here.
+   ===================================================================== */
+
+.resume-page {
+  /* Palette */
+  --r-navy:        #061A33;
+  --r-navy-2:      #071E3D;
+  --r-navy-3:      #0B253F;
+  --r-blue:        #1D7CFF;
+  --r-blue-soft:   #4DB8FF;
+  --r-blue-steel:  #6FA8DC;
+  --r-white:       #FFFFFF;
+  --r-panel:       #F7FAFD;
+  --r-cool-gray:   #E6EEF7;
+  --r-text:        #101827;
+  --r-text-2:      #44546A;
+  --r-text-3:      #6B7A8F;
+
+  /* Fonts (Rajdhani is added to the page's <head>) */
+  --r-font-display: 'Rajdhani', 'Inter', sans-serif;
+  --r-font-body:    'Inter', sans-serif;
+  --r-font-mono:    'JetBrains Mono', monospace;
+
+  background: var(--r-navy);
+  color: var(--r-text);
+}
+
+/* =============================
+   NAV (scoped override)
+   ============================= */
+.resume-page .navbar {
+  background: rgba(6, 26, 51, 0.92);
+  border-bottom: 1px solid rgba(29, 124, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.resume-page .brand-name { color: var(--r-white); }
+.resume-page .brand-dot  {
+  background: var(--r-blue);
+  box-shadow: 0 0 10px var(--r-blue);
+}
+
+.resume-page .nav-links a {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.resume-page .nav-links a:hover {
+  color: var(--r-white);
+  background: rgba(29, 124, 255, 0.12);
+}
+
+.resume-page .nav-links a.active {
+  color: var(--r-white);
+  font-weight: 600;
+}
+
+.resume-page .nav-cta {
+  background: var(--r-blue) !important;
+  color: var(--r-white) !important;
+  border: 1px solid var(--r-blue) !important;
+}
+
+.resume-page .nav-cta:hover { opacity: 0.92; }
+
+/* The resume page is visually fixed — toggle has no purpose here. */
+.resume-page .theme-toggle { display: none !important; }
+
+/* =============================
+   PAGE STRUCTURE
+   ============================= */
+.resume-page main.resume-main {
+  display: block;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================
+   HERO
+   ============================= */
+.resume-hero {
+  position: relative;
+  background:
+    radial-gradient(1200px 600px at 80% -20%, rgba(29, 124, 255, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 10% 10%,  rgba(77, 184, 255, 0.10), transparent 65%),
+    linear-gradient(180deg, #061A33 0%, #071E3D 60%, #0B253F 100%);
+  color: var(--r-white);
+  padding: calc(var(--nav-height) + 72px) 24px 112px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Subtle hexagon pattern overlay (corners). Pure SVG, no extra request. */
+.resume-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='64' viewBox='0 0 56 64'><path d='M28 1L54 16v32L28 63 2 48V16z' fill='none' stroke='%231D7CFF' stroke-opacity='0.18' stroke-width='1'/></svg>");
+  background-size: 56px 64px;
+  opacity: 0.45;
+  -webkit-mask-image:
+    radial-gradient(60% 60% at 0% 0%,   black 0%, transparent 60%),
+    radial-gradient(50% 60% at 100% 100%, black 0%, transparent 60%);
+          mask-image:
+    radial-gradient(60% 60% at 0% 0%,   black 0%, transparent 60%),
+    radial-gradient(50% 60% at 100% 100%, black 0%, transparent 60%);
+  -webkit-mask-composite: source-over;
+          mask-composite: add;
+  z-index: -1;
+}
+
+/* Thin horizontal "scanline" under the hero */
+.resume-hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--r-blue) 40%, var(--r-blue-soft) 50%, var(--r-blue) 60%, transparent 100%);
+  opacity: 0.45;
+}
+
+.resume-hero__inner {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.resume-hero__left { min-width: 0; }
+
+.resume-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--r-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--r-blue-soft);
+  margin-bottom: 18px;
+}
+
+.resume-hero__eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--r-blue);
+  display: inline-block;
+}
+
+.resume-hero__name {
+  font-family: var(--r-font-display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  letter-spacing: 0.045em;
+  line-height: 1.02;
+  text-transform: uppercase;
+  color: var(--r-white);
+  margin: 0 0 14px;
+}
+
+.resume-hero__title {
+  font-family: var(--r-font-display);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--r-blue-soft);
+  margin: 0 0 22px;
+}
+
+.resume-hero__divider {
+  width: 96px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--r-blue) 0%, var(--r-blue-soft) 100%);
+  box-shadow: 0 0 12px rgba(77, 184, 255, 0.55);
+  border-radius: 2px;
+  margin-bottom: 26px;
+}
+
+.resume-hero__email {
+  display: inline-block;
+  font-family: var(--r-font-mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--r-white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 4px;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.resume-hero__email:hover {
+  color: var(--r-blue-soft);
+  border-color: var(--r-blue-soft);
+}
+
+.resume-hero__links {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.resume-hero__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+  transition: color 200ms ease, border-color 200ms ease;
+}
+
+.resume-hero__links a:hover {
+  color: var(--r-blue-soft);
+  border-color: var(--r-blue-soft);
+}
+
+.resume-hero__links a svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* =============================
+   HERO VISUAL (SVG illustration)
+   ============================= */
+.resume-hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 380px;
+}
+
+.resume-hero__svg {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  filter: drop-shadow(0 8px 32px rgba(29, 124, 255, 0.22));
+}
+
+/* Pulse animation on a handful of nodes */
+@keyframes resumeNodePulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%      { opacity: 0.45; transform: scale(0.9); }
+}
+
+@keyframes resumeRingRotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes resumeGlow {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+
+.resume-hero__svg .pulse-node {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: resumeNodePulse 3s ease-in-out infinite;
+}
+
+.resume-hero__svg .pulse-node--b { animation-delay: 0.6s; }
+.resume-hero__svg .pulse-node--c { animation-delay: 1.2s; }
+.resume-hero__svg .pulse-node--d { animation-delay: 1.8s; }
+
+.resume-hero__svg .hud-ring--outer {
+  transform-origin: 210px 190px;
+  animation: resumeRingRotate 80s linear infinite;
+}
+
+.resume-hero__svg .shield-glow {
+  animation: resumeGlow 4s ease-in-out infinite;
+}
+
+/* =============================
+   SCROLL PROGRESS BAR
+   ============================= */
+.resume-progress {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--r-blue) 0%, var(--r-blue-soft) 100%);
+  z-index: 99;
+  pointer-events: none;
+  transition: width 80ms linear;
+}
+
+/* =============================
+   WHITE PANEL (main content)
+   ============================= */
+.resume-panel {
+  position: relative;
+  background: var(--r-panel);
+  color: var(--r-text);
+  /* Slight angular top edge to mimic the "digital frame" feel */
+  clip-path: polygon(0 22px, 32% 0, 100% 22px, 100% 100%, 0 100%);
+  margin-top: -22px;
+  padding: 72px 24px 96px;
+}
+
+.resume-panel__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 32px;
+}
+
+/* Vertical timeline rail (the thin blue line connecting hex badges) */
+.resume-panel__rail {
+  position: relative;
+  width: 56px;
+}
+
+.resume-panel__rail::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg,
+    var(--r-blue) 0%,
+    var(--r-blue-soft) 12%,
+    var(--r-cool-gray) 90%);
+  transform: translateX(-0.5px);
+}
+
+/* =============================
+   SECTIONS
+   ============================= */
+.resume-sections {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  min-width: 0;
+}
+
+.resume-section {
+  position: relative;
+  scroll-margin-top: calc(var(--nav-height) + 24px);
+}
+
+/* Hex badge — sits on the rail, aligned with the section heading */
+.resume-section__badge {
+  position: absolute;
+  left: -88px;
+  top: -2px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-section__badge svg.hex {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.resume-section__badge svg.icon {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  color: var(--r-blue);
+  z-index: 1;
+}
+
+/* Section heading: title + slash + line + dots */
+.resume-section__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  min-height: 32px;
+}
+
+.resume-section__title {
+  font-family: var(--r-font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--r-navy);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Small parallelogram accent after the title */
+.resume-section__slash {
+  width: 14px;
+  height: 14px;
+  background: var(--r-blue);
+  transform: skewX(-22deg);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(29, 124, 255, 0.4);
+}
+
+/* Thin horizontal line extending to the right */
+.resume-section__line {
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, var(--r-cool-gray) 0%, rgba(230, 238, 247, 0.3) 100%);
+  min-width: 24px;
+}
+
+/* Three small electric-blue dots at the far right */
+.resume-section__dots {
+  display: inline-flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.resume-section__dots i {
+  width: 5px;
+  height: 5px;
+  background: var(--r-blue);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.resume-section__dots i:nth-child(2) { opacity: 0.65; }
+.resume-section__dots i:nth-child(3) { opacity: 0.4; }
+
+/* Section body */
+.resume-section__body { color: var(--r-text-2); }
+
+.resume-section__body p {
+  font-family: var(--r-font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--r-text-2);
+  max-width: 70ch;
+}
+
+.resume-section__body p strong {
+  color: var(--r-text);
+  font-weight: 600;
+}
+
+/* =============================
+   CORE EXPERTISE — Grid of capability lines
+   ============================= */
+.resume-expertise {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-expertise__item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--r-cool-gray);
+}
+
+.resume-expertise__item:first-child,
+.resume-expertise__item:nth-child(2) { border-top: 0; padding-top: 4px; }
+
+.resume-expertise__icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(29, 124, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(29, 124, 255, 0.06);
+  color: var(--r-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.resume-expertise__icon svg { width: 18px; height: 18px; }
+
+.resume-expertise__text {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--r-text-2);
+}
+
+.resume-expertise__label {
+  font-weight: 700;
+  color: var(--r-navy);
+  letter-spacing: -0.005em;
+}
+
+/* =============================
+   PROFESSIONAL EXPERIENCE
+   ============================= */
+.resume-role { margin-bottom: 24px; }
+
+.resume-role__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin-bottom: 6px;
+}
+
+.resume-role__title {
+  font-family: var(--r-font-body);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--r-navy);
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.resume-role__org {
+  color: var(--r-text-2);
+  font-size: 0.98rem;
+}
+
+.resume-role__period {
+  font-family: var(--r-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--r-blue);
+  background: rgba(29, 124, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(29, 124, 255, 0.2);
+  white-space: nowrap;
+}
+
+.resume-role__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.resume-role__bullets li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--r-text-2);
+  max-width: 78ch;
+}
+
+.resume-role__bullets li::before {
+  content: "";
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 10px;
+  height: 1px;
+  background: var(--r-blue);
+}
+
+.resume-role__bullets li strong {
+  color: var(--r-text);
+  font-weight: 600;
+}
+
+/* =============================
+   SELECTED SYSTEMS — Cards
+   ============================= */
+.resume-systems {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.resume-systems__card {
+  position: relative;
+  background: var(--r-white);
+  border: 1px solid var(--r-cool-gray);
+  border-left: 3px solid var(--r-blue);
+  border-radius: 10px;
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.resume-systems__card:hover {
+  border-color: rgba(29, 124, 255, 0.45);
+  border-left-color: var(--r-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(6, 26, 51, 0.08);
+}
+
+.resume-systems__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(29, 124, 255, 0.08);
+  color: var(--r-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-systems__icon svg { width: 18px; height: 18px; }
+
+.resume-systems__name {
+  font-family: var(--r-font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--r-navy);
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+
+.resume-systems__desc {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--r-text-2);
+}
+
+.resume-systems__bullets {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  display: grid;
+  gap: 6px;
+}
+
+.resume-systems__bullets li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--r-text-3);
+}
+
+.resume-systems__bullets li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--r-blue);
+  border-radius: 50%;
+}
+
+/* =============================
+   EARLIER EXPERIENCE
+   ============================= */
+.resume-earlier {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.resume-earlier .resume-role { margin-bottom: 0; }
+
+/* =============================
+   TECHNICAL SKILLS — grouped chips
+   ============================= */
+.resume-skills {
+  display: grid;
+  gap: 18px;
+}
+
+.resume-skills__group {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 20px;
+  padding: 14px 0;
+  border-top: 1px solid var(--r-cool-gray);
+}
+
+.resume-skills__group:first-child { border-top: 0; padding-top: 0; }
+
+.resume-skills__label {
+  font-family: var(--r-font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--r-navy);
+  align-self: start;
+  padding-top: 4px;
+}
+
+.resume-skills__chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.resume-skills__chips li {
+  font-family: var(--r-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--r-text-2);
+  background: var(--r-white);
+  border: 1px solid var(--r-cool-gray);
+  border-radius: 999px;
+  padding: 5px 12px;
+  transition: border-color 200ms ease, color 200ms ease, background 200ms ease;
+}
+
+.resume-skills__chips li:hover {
+  border-color: var(--r-blue);
+  color: var(--r-blue);
+  background: rgba(29, 124, 255, 0.04);
+}
+
+/* =============================
+   EDUCATION
+   ============================= */
+.resume-education {
+  display: grid;
+  gap: 4px;
+  color: var(--r-text-2);
+}
+
+.resume-education__degree {
+  font-family: var(--r-font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--r-navy);
+}
+
+.resume-education__detail {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* =============================
+   FOOTER (resume-scoped override)
+   ============================= */
+.resume-page .site-footer {
+  position: relative;
+  margin-top: 0;
+  padding: 56px 24px 32px;
+  background: var(--r-navy);
+  border-top: 1px solid rgba(29, 124, 255, 0.22);
+  color: rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+/* Subtle dot matrix in the footer */
+.resume-page .site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(29, 124, 255, 0.18) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+  background-position: 0 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.resume-page .site-footer__top,
+.resume-page .site-footer__meta {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-color: rgba(29, 124, 255, 0.16);
+}
+
+.resume-page .site-footer__brand .brand,
+.resume-page .site-footer__brand .brand-name { color: var(--r-white); }
+.resume-page .site-footer__brand .brand-dot {
+  background: var(--r-blue);
+  box-shadow: 0 0 8px var(--r-blue);
+}
+.resume-page .site-footer__role { color: var(--r-blue-soft); }
+
+.resume-page .site-footer__nav a { color: rgba(255, 255, 255, 0.7); }
+.resume-page .site-footer__nav a:hover { color: var(--r-white); }
+
+.resume-page .site-footer__social a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.resume-page .site-footer__social a:hover {
+  color: var(--r-blue-soft);
+  background: rgba(29, 124, 255, 0.12);
+}
+
+.resume-page .site-footer__meta { color: rgba(255, 255, 255, 0.5); }
+
+/* =============================
+   RESPONSIVE
+   ============================= */
+@media (max-width: 1024px) {
+  .resume-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .resume-hero__visual {
+    order: -1;
+    min-height: 280px;
+  }
+  .resume-hero__svg { max-width: 380px; }
+
+  .resume-panel__inner {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .resume-section__badge {
+    left: -64px;
+    width: 40px;
+    height: 40px;
+  }
+  .resume-section__badge svg.icon { width: 16px; height: 16px; }
+
+  .resume-skills__group { grid-template-columns: 160px minmax(0, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .resume-hero {
+    padding: calc(var(--nav-height) + 48px) 20px 80px;
+  }
+  .resume-hero__visual { min-height: 220px; }
+  .resume-hero__svg { max-width: 300px; }
+
+  .resume-panel {
+    clip-path: polygon(0 14px, 40% 0, 100% 14px, 100% 100%, 0 100%);
+    margin-top: -14px;
+    padding: 56px 20px 72px;
+  }
+
+  /* Hide the left rail / hex badges on mobile per the prompt */
+  .resume-panel__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .resume-panel__rail { display: none; }
+  .resume-section__badge { display: none; }
+
+  .resume-sections { gap: 48px; }
+
+  .resume-expertise { grid-template-columns: 1fr; }
+  .resume-expertise__item { border-top: 1px solid var(--r-cool-gray); padding-top: 14px; }
+  .resume-expertise__item:nth-child(2) { border-top: 1px solid var(--r-cool-gray); padding-top: 14px; }
+  .resume-expertise__item:first-child { border-top: 0; padding-top: 4px; }
+
+  .resume-systems { grid-template-columns: 1fr; }
+
+  .resume-skills__group {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .resume-section__title {
+    letter-spacing: 0.14em;
+    font-size: 1.15rem;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 560px) {
+  .resume-hero__name { letter-spacing: 0.035em; }
+  .resume-hero__title { letter-spacing: 0.22em; font-size: 0.95rem; }
+  .resume-role__period { font-size: 11px; padding: 3px 8px; }
+}
+
+/* =============================
+   REDUCED MOTION
+   The global stylesheet already clamps animation durations
+   to 0.001ms under prefers-reduced-motion. Belt and braces
+   for the scroll progress bar, which uses width transitions.
+   ============================= */
+@media (prefers-reduced-motion: reduce) {
+  .resume-progress { transition: none; }
+  .resume-hero__svg .pulse-node,
+  .resume-hero__svg .hud-ring--outer,
+  .resume-hero__svg .shield-glow {
+    animation: none;
+  }
+}
